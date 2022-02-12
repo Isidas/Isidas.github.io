@@ -1,0 +1,135 @@
+$grey: #4c5866;
+.duts-wrapper {
+	overflow: hidden;
+	.duts {
+		left: 0;
+		z-index: 1;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		.dut-1 {
+			position: relative;
+			z-index: 1;
+			margin: 15px 0;
+			width: 30px;
+			height: 30px;
+			background: $grey;
+			border: none;
+			border-radius: 50%;
+		}
+		.dut-2 {
+			position: relative;
+			z-index: 1;
+			margin: 15px 0;
+			width: 15px;
+			height: 15px;
+			background: $grey;
+			border: none;
+			border-radius: 50%;
+		}
+		.dut-3 {
+			position: relative;
+			z-index: 1;
+			margin: 15px 0;
+			width: 3px;
+			height: 3px;
+			background: $grey;
+			border: none;
+			border-radius: 50%;
+		}
+		.dut-4 {
+			position: relative;
+			z-index: 1;
+			margin: 15px 0;
+			width: 9px;
+			height: 9px;
+			background: $grey;
+			border: none;
+			border-radius: 50%;
+		}
+		.dut-5 {
+			position: relative;
+			z-index: 1;
+			margin: 15px 0;
+			width: 25px;
+			height: 25px;
+			background: $grey;
+			border: none;
+			border-radius: 50%;
+		}
+	}
+}
+
+
+
+.duts-bg {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: start;
+	.dutbg-0 {
+		position: relative;
+		z-index: 1;
+		margin: 15px 35px;
+		width: 10px;
+		height: 10px;
+		background: $grey;
+		border: none;
+		border-radius: 50%;
+	}
+	.dutbg-1 {
+		position: relative;
+		z-index: 1;
+		margin: 15px 35px;
+		width: 15px;
+		height: 15px;
+		background: $grey;
+		border: none;
+		border-radius: 50%;
+	}
+	.dutbg-2 {
+		position: relative;
+		z-index: 1;
+		margin: 15px 35px;
+		width: 4px;
+		height: 4px;
+		background: $grey;
+		border: none;
+		border-radius: 50%;
+	}
+	.dutbg-3 {
+		position: relative;
+		z-index: 1;
+		margin: 15px 35px;
+		width: 7px;
+		height: 7px;
+		background: $grey;
+		border: none;
+		border-radius: 50%;
+	}
+	.dutbg-4 {
+		position: relative;
+		z-index: 1;
+		margin: 15px 35px;
+		width: 12px;
+		height: 12px;
+		background: $grey;
+		border: none;
+		border-radius: 50%;
+	}
+	.dutbg-5 {
+		position: relative;
+		z-index: 1;
+		margin: 15px 35px;
+		width: 20px;
+		height: 20px;
+		background: $grey;
+		border: none;
+		border-radius: 50%;
+	}
+}

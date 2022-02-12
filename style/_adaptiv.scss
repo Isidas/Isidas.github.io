@@ -1,0 +1,146 @@
+@media (max-width: 1200px) {
+	.duts-wrapper {
+		max-width: 1200px;
+		.duts {
+			width: 1500px;
+		}
+	}
+	.survey {
+		display: flex;
+		.container {
+			margin: 0 auto;
+			.survey__header {
+				max-width: 1024px;
+			}
+			.survey__frame  {
+				max-width: 1024px;
+				.survey__frame-block {
+					max-width: 90%;
+					.block-inputs {
+						max-width: 90%;
+					}
+					.block-content {
+						.survey-frame-img {
+							max-width: 100%;
+						}
+						.block-contents-btns {
+							.survey-frame-btn {
+								max-width: 47%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.portfolio {
+		overflow: hidden;
+		.container {
+			.slider-wrapper {
+				max-width: 100%;
+				.slider-section {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+.videoblock {
+	overflow: hidden;
+	.container {
+		.videoblock-slider {
+			max-width: 100%;
+			.videoblock-slider-line {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 1070px) {
+	.header {
+		.container {
+			.header__menu-contacts {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				padding: 0 0 10px 0;
+			}
+		}
+	}
+	.catalog {
+		.container {
+			.catalog__wrapper {
+				.catalog__wrapper-cards-section {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+			}
+		}
+	}
+	.survey {
+		display: flex;
+		.container {
+			margin: 0 auto;
+			.survey__header {
+				max-width: 1024px;
+			}
+			.survey__frame  {
+				max-width: 1024px;
+				.survey__frame-block {
+					max-width: 90%;
+					.block-inputs {
+						max-width: 90%;
+					}
+					.block-content {
+						.survey-frame-img {
+							max-width: 100%;
+						}
+						.block-contents-btns {
+							.survey-frame-btn {
+								max-width: 45%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 945px) {
+	.main {
+		.about-us {
+			display: flex;
+			margin: 0 auto;
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: start;
+				.about-us-content {
+					.about-us__text {
+						width: 200px;
+					}
+				}
+			}
+		}
+		.survey {
+			.container {
+				margin: 0 auto;
+				.survey__header {
+					max-width: 1024px;
+				}
+				.survey__desktop {
+					display: none;
+				}
+				.survey__mobile {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+
+
+

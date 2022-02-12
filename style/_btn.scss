@@ -1,0 +1,17 @@
+.btn {
+	width: 255px;
+	height: 70px;
+	border: none;
+	background: linear-gradient(90deg, #4C6071 0%, #55BDEA 100%);
+	box-shadow: 0px 0px 166px rgba(0, 0, 0, 0.2), 8px 8px 109px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	color: #ffff;
+	font-family: "Roboto";
+	font-weight: 500;
+	font-size: 20px;
+	cursor: pointer;
+	&:hover {
+		border: 5px solid #000000;
+		transition: 0.05s;
+	}
+}
