@@ -7,9 +7,7 @@
 // colors
 
 
-body {
-	overflow-x: hidden;
-}
+
 .container {
   max-width: 1200px;
 }
@@ -64,10 +62,7 @@ body {
 					top: 0;
 					right: -15px;
 					padding: 20px;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-around;
-					align-items: center;
+					display: none;
 					background-color: #4C6071;
 					opacity: 0.9;
 					z-index: 150;
@@ -76,6 +71,10 @@ body {
 				}
 			}
 			.nav-active {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
 				transform: translateX(0);
 			}
 			.header__menu-contacts {
