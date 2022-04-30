@@ -1,0 +1,216 @@
+@import "__null_style";
+
+body {
+	background-color: black;
+}
+
+.preloader {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	z-index: 51;
+	background-color: black;
+	.preloader-logo {
+		.logo {
+			width: 500px;
+			height: auto;
+			animation: loader 10s linear;
+			@keyframes loader{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		}
+	}
+}
+
+.popup {
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  z-index: 998;
+  width: 100%;
+  height: 102vh;
+	.none {
+		display: none;
+	}
+	.active{
+		display: block;
+		width: 500px;
+		height: auto;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+
+.frames {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 49;
+	.frame-top {
+		transform: rotate(180deg);
+		margin-bottom: 30px;
+	}
+	.blue {
+		background: linear-gradient(180deg, rgba(36, 82, 204, 0.76) 0%, rgba(67, 110, 222, 0.76) 46.35%, rgba(0, 0, 0, 0.76) 87.5%), url('./images/bg.png') top center;
+  	background-size: cover;
+		.btn-blue {
+			background: linear-gradient(179deg, #779AF4 0%, #376CBE 150.4%);
+  		border-color: 5px solid #2E5DA6;		
+		}
+	}
+	.green {
+		background: linear-gradient(180deg, rgba(64, 188, 61, 0.76) 0%, rgba(0, 0, 0, 0.76) 87.26%), url('./images/bg.png') top center;
+  	background-size: cover;
+		.btn-green {
+			background: linear-gradient(180deg, rgba(84, 204, 82, 0.8) 0%, rgba(23, 186, 40, 0.8) 189.92%);
+  		border: 5px solid #0F8013;
+		}
+	}
+	.red {
+		background: linear-gradient(180deg, rgba(216, 33, 33, 0.76) 0%, rgba(188, 30, 30, 0.76) 45.14%, rgba(0, 0, 0, 0.76) 87.26%), url('./images/bg.png') top center;
+  	background-size: cover;
+		.btn-red {
+			background: linear-gradient(180deg, #F36666 0%, #CA2929 100%);;
+  		border: 5px solid black;
+		}
+	}
+	.violet {
+		background: linear-gradient(180deg, rgba(142, 42, 204, 0.76) 0%, rgba(0, 0, 0, 0.76) 87.5%), url('./images/bg.png') top center;
+  	background-size: cover;
+		.btn-violet {
+			background: linear-gradient(180deg, #9A2CDE -13.01%, #952FD2 128.08%), linear-gradient(133.7deg, #FFFFFF 2.06%, #DDDDDD 95.18%);
+  		border: 5px solid #D0AFE3;
+		}
+	}
+	.frame {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+		min-width: 450px;
+		height: 420px;
+		padding: 20px;
+		border-top-left-radius: 10%;
+		border-top-right-radius: 10%;
+		.frame-text {
+			text-align: center;
+			margin-top: 60px;
+			max-width: 200px;
+			color: white;
+			font-size: 17px;
+		}
+		.frame-event {
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			right: 40px;
+			top: 40px;
+			border: none;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			background-color: transparent;
+			&:hover {
+				border: 3px solid gold;
+				transition: 0.1s;
+			}
+			.lightning {
+				width: 40px;
+				height: 40px;
+				&:hover {
+					color: gold;
+					transition: 0.2s;
+				}
+			}
+		}
+		.counter {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 300px;
+			.counter-text {
+				font-size: 150px;
+				color: white;
+			}
+			.counter-minus {
+				position: relative;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				border: none;
+				cursor: pointer;
+				&:after {
+					position: absolute;
+					margin: -3px 0 0 8px;
+					content: '';
+					display: block;
+					width: 30px;
+					height: 7px;
+					background-color: gray;
+					border-radius: 5px;
+				}
+			}
+			.counter-plus {
+				position: relative;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				border: none;
+				cursor: pointer;
+				&:after {
+					position: absolute;
+					margin: -3px 0 0 8px;
+					content: '';
+					display: block;
+					width: 30px;
+					height: 7px;
+					background-color: gray;
+					border-radius: 5px;
+				}
+				&:before {
+					position: absolute;
+					margin: -14px 0 0 19px;
+					content: '';
+					display: block;
+					width: 7px;
+					height: 30px;
+					background-color: gray;
+					border-radius: 5px;
+				}
+			}
+		}
+		.btn-color {
+			width: 50px;
+			height: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			.img-btn {
+				width: 50px;
+				height: 50px;
+			}
+		}
+	}
+	.coube {
+		position: absolute;
+		z-index: 50;
+		width: 150px;
+		height: 150px;
+		cursor: pointer;
+	}
+}

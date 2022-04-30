@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/main.css">
+    <title>Need more gold</title>
+</head>
+<body>
+	<script>
+		setTimeout(function loader() {
+			let preloader = document.querySelector('.preloader');
+			let content   = document.querySelector('.frames');
+			content.style.display = "flex"
+			preloader.style.display = "none"
+		},2500);
+	</script>
+	<div class="popup">
+		<img src="./img/1.png" alt="event" class="img-event none">
+		<img src="./img/2.png" alt="event" class="img-event none">
+		<img src="./img/4.png" alt="event" class="img-event none">
+		<img src="./img/5.png" alt="event" class="img-event none">
+		<img src="./img/7.png" alt="event" class="img-event none">
+		<img src="./img/8.png" alt="event" class="img-event none">
+		<img src="./img/10.png" alt="event" class="img-event none">
+		<img src="./img/12.png" alt="event" class="img-event none">
+		<img src="./img/13.png" alt="event" class="img-event none">
+		<img src="./img/14.png" alt="event" class="img-event none">
+		<img src="./img/16.png" alt="event" class="img-event none">
+		<img src="./img/18.png" alt="event" class="img-event none">
+		<img src="./img/19.png" alt="event" class="img-event none">
+	</div>
+	<div class="preloader">
+		<div class="preloader-logo"><img src="./img/logo.png" alt="" class="logo"></div>
+	</div>
+    <div class="frames">
+			<div class="frame frame-top">
+				<span class="frame-text">Здесь будет текст после выпадения какого-либо события</span>
+				<button class="frame-event frame-event-top"><img src="./img/icons/lightning_105129.svg" alt="" class="lightning"></button>
+				<div class="counter">
+					<button class="counter-minus"></button>
+					<span class="counter-text">0</span>
+					<button class="counter-plus"></button>
+				</div>
+				<button class="btn-color btn-color-top"><img src="./img/icons/heart.svg" alt="" class="img-btn"></button>
+			</div>
+			<img src="./img/cube1.svg" alt="coube" class="coube">
+			<div class="frame frame-bot">
+				<span class="frame-text frame-text-bot">Здесь будет текст после выпадения какого-либо события</span>
+				<button class="frame-event frame-event-bot"><img src="./img/icons/lightning_105129.svg" alt="" class="lightning"></button>
+				<div class="counter">
+					<button id="minus" class="counter-minus"></button>
+					<span id="number" class="counter-text">0</span>
+					<button id="pluse" class="counter-plus"></button>
+				</div>
+				<button class="btn-color btn-color-bot"><img src="./img/icons/heart.svg" alt="" class="img-btn"></button>
+			</div>
+		</div>
+
+		<script src="./js/main.js"></script>
+</body>
+</html>
