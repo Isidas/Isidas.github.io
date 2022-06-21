@@ -8,8 +8,8 @@ for (let i=0; i < BOX_COUNT; i++ ) {
 
 	board.append(box);
 
-	box.addEventListener('mouseover', () => setColor(box))
-	box.addEventListener('mouseleave', () => removeColor(box))
+	box.addEventListener('pointerover', () => setColor(box))
+	box.addEventListener('pointerleave', () => removeColor(box))
 
 
 }
