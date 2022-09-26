@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2d9fcdc6.css",
+    "main.js": "/static/js/main.16740805.js",
+    "static/media/bg_header.png": "/static/media/bg_header.b87cab269858a5b59256.png",
+    "static/media/for1.png": "/static/media/for1.750ab4c1cfdf4c57e920.png",
+    "static/media/for2.png": "/static/media/for2.e2004ed29c549c1cac1a.png",
+    "static/media/for4.png": "/static/media/for4.dda6ba25f3ac664d32f0.png",
+    "static/media/for3.png": "/static/media/for3.6882bf49edd65df01142.png",
+    "static/media/product1.png": "/static/media/product1.b35fcaf445d333b5e078.png",
+    "static/media/special2.png": "/static/media/special2.1b9609c7829864af0c59.png",
+    "static/media/product5.png": "/static/media/product5.25626bbf1c4d95740c04.png",
+    "static/media/product4.png": "/static/media/product4.b7114b17967ca0cfcb7a.png",
+    "static/media/product3.png": "/static/media/product3.4ce6f8af59e71678e89d.png",
+    "static/media/for5.png": "/static/media/for5.5c4b2ebd8423fb3f51a4.png",
+    "static/media/product6.png": "/static/media/product6.84fdd34417c03f92113a.png",
+    "static/media/special3.png": "/static/media/special3.3a1e0b109ac65b8f5ef8.png",
+    "static/media/special1.png": "/static/media/special1.79e36577dc088f0efd53.png",
+    "static/media/product2.png": "/static/media/product2.699052070c55742e6dcf.png",
+    "static/media/instagram.svg": "/static/media/instagram.3b835208eb8a7247736433950beeac86.svg",
+    "static/media/buy.svg": "/static/media/buy.f8c7b75dafa6c01f2b0b0031418c1094.svg",
+    "static/media/search.svg": "/static/media/search.1f04a1c72b8d600557308bfb628ce154.svg",
+    "static/media/twitter.svg": "/static/media/twitter.4f59e13a899762ac3c6c5170376a06de.svg",
+    "index.html": "/index.html",
+    "static/media/facebook.svg": "/static/media/facebook.7bed5d20645270dfd81b6bc3074043fa.svg",
+    "main.2d9fcdc6.css.map": "/static/css/main.2d9fcdc6.css.map",
+    "main.16740805.js.map": "/static/js/main.16740805.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d9fcdc6.css",
+    "static/js/main.16740805.js"
+  ]
+}
