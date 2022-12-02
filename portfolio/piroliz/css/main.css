@@ -374,18 +374,18 @@ a {
 }
 .finmodel__inner .piroliz__svg {
   position: absolute;
-  width: 88.6%;
-  right: -20px;
-  top: 80px;
+  width: 70%;
+  right: -28px;
+  top: 30px;
   -webkit-transition: 0.5s ease-in;
   -o-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
 }
 .finmodel__inner .piroliz__png {
   position: absolute;
-  width: 110%;
-  right: -125px;
-  top: -170px;
+  width: 70%;
+  right: -28px;
+  top: 30px;
   -webkit-transition: 0.5s ease-in;
   -o-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
@@ -454,6 +454,38 @@ a {
   .finmodel__title {
     font-size: 60px;
   }
+  .finmodel__inner {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .finmodel__inner .piroliz__svg {
+    position: absolute;
+    width: 70%;
+    right: -28px;
+    top: 130px;
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
+  }
+  .finmodel__inner .piroliz__png {
+    position: absolute;
+    width: 70%;
+    right: -28px;
+    top: 130px;
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
+  }
+  .finmodel__inner .hide {
+    opacity: 0;
+    visibility: hidden;
+  }
   .finmodel__svg {
     position: absolute;
   }
@@ -464,7 +496,7 @@ a {
     right: -50px;
   }
   .finmodel__svg--bottom {
-    bottom: -620px;
+    bottom: -470px;
   }
 }
 @media screen and (max-width: 1264px) {
@@ -554,6 +586,7 @@ a {
 }
 @media screen and (max-width: 630px) {
   .finmodel {
+    height: 900px;
     padding: 60px 40px;
   }
   .finmodel__title {
@@ -573,8 +606,14 @@ a {
   .finmodel__inner .piroliz__svg {
     position: absolute;
     max-width: 100%;
-    right: -25px;
-    top: 230px;
+    right: 0px;
+    top: 150px;
+  }
+  .finmodel__inner .piroliz__png {
+    position: absolute;
+    max-width: 100%;
+    right: 0px;
+    top: 150px;
   }
   .finmodel__item {
     position: relative;
@@ -594,8 +633,41 @@ a {
   .finmodel__svg--adaptiv {
     width: 70%;
     display: block;
-    top: 170px;
+    top: 60px;
     right: -40px;
+  }
+}
+@media screen and (max-width: 489px) {
+  .finmodel {
+    padding: 60px 40px;
+  }
+  .finmodel__inner {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .finmodel__inner .piroliz__svg {
+    position: absolute;
+    max-width: 100%;
+    left: 0px;
+    top: 250px;
+  }
+  .finmodel__inner .piroliz__png {
+    position: absolute;
+    max-width: 100%;
+    left: 0px;
+    top: 250px;
+  }
+  .finmodel__svg--adaptiv {
+    width: 100%;
+    display: block;
+    top: 110px;
+    right: 10px;
   }
 }
 @media screen and (max-width: 425px) {
