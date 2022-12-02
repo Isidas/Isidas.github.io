@@ -374,18 +374,21 @@ a {
 }
 .finmodel__inner .piroliz__svg {
   position: absolute;
-  max-width: 100%;
-  right: -25px;
+  width: 88.6%;
+  right: -20px;
   top: 80px;
+  -webkit-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 .finmodel__inner .piroliz__png {
   position: absolute;
-  width: 100%;
-  right: 0px;
-  top: -70px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  width: 110%;
+  right: -125px;
+  top: -170px;
+  -webkit-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 .finmodel__inner .hide {
   opacity: 0;

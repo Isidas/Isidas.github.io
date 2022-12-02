@@ -19,6 +19,7 @@ const faqBtn1 = document.querySelector('.faq__item--btn--first'),
   faqTitle4 = document.querySelector('.faq__item--title--four'),
   burgerBtn = document.querySelector('.menu__burger'),
   pirolizPng = document.querySelector('.piroliz__png');
+pirolizSvg = document.querySelector('.piroliz__svg');
 burgerMenu = document.querySelector('.menu');
 function ToggleClass1() {
   faqBtn1.addEventListener('click', e => {
@@ -64,7 +65,8 @@ toggleBurger();
 
 const mySvg = new Vivus('mySvg', {
   type: 'sync',
-  duration: 200
+  duration: 200,
+  start: 'autostart'
 });
 const pdffull1 = new Vivus('pdffuel1', {
   type: 'sync',
@@ -74,6 +76,10 @@ const pdffull2 = new Vivus('pdffuel2', {
   type: 'sync',
   duration: 200
 });
+setTimeout(() => {
+  pirolizPng.classList.remove('hide');
+  pirolizSvg.classList.add('hide');
+}, 2000);
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
