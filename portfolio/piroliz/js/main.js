@@ -18,7 +18,8 @@ const faqBtn1 = document.querySelector('.faq__item--btn--first'),
   faqTitle3 = document.querySelector('.faq__item--title--three'),
   faqTitle4 = document.querySelector('.faq__item--title--four'),
   burgerBtn = document.querySelector('.menu__burger'),
-  burgerMenu = document.querySelector('.menu');
+  pirolizPng = document.querySelector('.piroliz__png');
+burgerMenu = document.querySelector('.menu');
 function ToggleClass1() {
   faqBtn1.addEventListener('click', e => {
     faqBtn1.classList.toggle('faq__item--btn__open');
@@ -62,6 +63,14 @@ toggleBurger();
 //  Animate
 
 const mySvg = new Vivus('mySvg', {
+  type: 'sync',
+  duration: 200
+});
+const pdffull1 = new Vivus('pdffuel1', {
+  type: 'sync',
+  duration: 200
+});
+const pdffull2 = new Vivus('pdffuel2', {
   type: 'sync',
   duration: 200
 });
