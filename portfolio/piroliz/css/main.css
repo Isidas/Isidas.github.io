@@ -1802,14 +1802,17 @@ a {
   }
 }
 .recast {
+  position: relative;
+  z-index: 50;
   padding: 120px 0;
   background-color: #fff;
-  background-image: url(../img/svg/recast/bg.svg);
   background-size: 74%;
   background-repeat: no-repeat;
   background-position: center left 60px;
 }
 .recast__grid {
+  z-index: 50;
+  position: relative;
   gap: 40px;
   -ms-grid-columns: (532px)[3];
   grid-template-columns: repeat(3, 532px);
@@ -1817,6 +1820,7 @@ a {
   grid-template-rows: 402px 540px;
 }
 .recast__item {
+  z-index: 50;
   padding: 64px 40px;
   background: #fff;
   -webkit-box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.2);
@@ -1872,6 +1876,13 @@ a {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+.recast .recast__bg {
+  position: absolute;
+  width: 80%;
+  left: 2%;
+  top: 20%;
+  z-index: 0;
 }
 
 @media screen and (max-width: 1440px) {
@@ -3014,13 +3025,16 @@ a {
   left: 0;
   background-color: #4048F5;
 }
-.payback__table {
+.payback .table__wrapper .payback__table {
+  overflow-x: visible;
+  width: auto;
+  visibility: visible;
   margin: 0 auto;
   margin-top: 280px;
   border: none;
   border-collapse: collapse;
 }
-.payback__table td {
+.payback .table__wrapper .payback__table td {
   padding: 54px 30px;
   border: 1px solid #e1e1e1;
   font-weight: 400;
@@ -3029,43 +3043,43 @@ a {
   color: #262626;
   width: 280px;
 }
-.payback__table thead {
+.payback .table__wrapper .payback__table thead {
   background-color: var(--finmodal-title);
 }
-.payback__table thead tr td {
+.payback .table__wrapper .payback__table thead tr td {
   font-weight: 600;
   font-size: 24px;
   line-height: 130%;
   color: #fff;
 }
-.payback__table thead tr td:first-child {
+.payback .table__wrapper .payback__table thead tr td:first-child {
   border-left: none;
 }
-.payback__table thead tr td:last-child {
+.payback .table__wrapper .payback__table thead tr td:last-child {
   border-right: none;
 }
-.payback__table tbody {
+.payback .table__wrapper .payback__table tbody {
   background: rgba(255, 255, 255, 0.002);
 }
-.payback__table tbody tr td {
+.payback .table__wrapper .payback__table tbody tr td {
   padding: 34px 40px;
 }
-.payback__table tbody tr td:first-child {
+.payback .table__wrapper .payback__table tbody tr td:first-child {
   border-left: none;
 }
-.payback__table tbody tr td:last-child {
+.payback .table__wrapper .payback__table tbody tr td:last-child {
   border-right: none;
 }
-.payback__table tfoot {
+.payback .table__wrapper .payback__table tfoot {
   background: rgba(255, 255, 255, 0.002);
 }
-.payback__table tfoot tr td {
+.payback .table__wrapper .payback__table tfoot tr td {
   border-bottom: none;
 }
-.payback__table tfoot tr td:first-child {
+.payback .table__wrapper .payback__table tfoot tr td:first-child {
   border-left: none;
 }
-.payback__table tfoot tr td:last-child {
+.payback .table__wrapper .payback__table tfoot tr td:last-child {
   border-right: none;
 }
 
@@ -3184,51 +3198,64 @@ a {
     color: #606060;
   }
   .payback__item--first {
-    top: 160px;
+    top: 0px;
     border-top: 4px solid #4048F5;
+    border-right: 4px solid #4048F5;
   }
   .payback__item--first::after {
     position: absolute;
     content: "";
-    width: 52px;
-    height: 4px;
-    top: -4px;
-    right: -11%;
+    width: 4px;
+    height: 65px;
+    top: 100%;
+    right: -4px;
     background-color: #4048F5;
   }
   .payback__item--second {
-    top: 80px;
+    top: 0px;
     border-top: 4px solid #4048F5;
+    border-left: 4px solid #4048F5;
   }
   .payback__item--second::after {
-    position: absolute;
-    content: "";
-    width: 50px;
-    height: 4px;
-    top: -4px;
-    right: -11%;
-    background-color: #4048F5;
+    position: relative;
+    width: 0px;
+    height: 0px;
   }
   .payback__item--second::before {
     position: absolute;
     content: "";
     width: 4px;
     height: 84px;
-    top: -4px;
-    left: 0;
+    top: 100%;
+    left: -4px;
     background-color: #4048F5;
   }
   .payback__item--three {
     border-top: 4px solid #4048F5;
+    border-right: 4px solid #4048F5;
   }
   .payback__item--three::before {
-    position: absolute;
-    content: "";
-    width: 4px;
-    height: 84px;
-    top: -4px;
-    left: 0;
-    background-color: #4048F5;
+    position: relative;
+    width: 0px;
+    height: 0px;
+  }
+  .payback .table__wrapper {
+    overflow-x: scroll;
+    width: 110%;
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 768px) {
+  .payback .payback__title {
+    font-size: 56px;
+  }
+}
+@media screen and (max-width: 512px) {
+  .payback .payback__title {
+    font-size: 36px;
+  }
+  .payback__item--title {
+    font-size: 36px;
   }
 }
 .own {
@@ -4324,5 +4351,124 @@ a {
 }
 .policy:hover {
   color: var(--menu-color__hover);
+}
+
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+}
+
+.tracking-in-contract {
+  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.text-focus-in {
+  -webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-12-3 11:45:23
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2022-12-3 14:35:50
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation tracking-in-contract
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2022-12-3 14:38:51
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=main.css.map */

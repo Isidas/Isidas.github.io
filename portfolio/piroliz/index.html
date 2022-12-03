@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <head lang="ru">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,8 @@
   <meta name="theme-color" content="#f6f6f6">
   <title>Пиролиз</title>
   <link rel="preload" href="Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -59,15 +61,15 @@
           <p class="finmodel__item--subtitle">Пожизненная согласно доле</p>
         </li>
       </ul>
-      <svg class="finmodel__svg finmodel__svg--top" viewBox="0 0 218 397" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg id="finmodelSvgTop" class="finmodel__svg finmodel__svg--top" viewBox="0 0 218 397" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="215.5" y1="397" x2="215.5" y2="2" stroke="#4048F5" stroke-width="4"/>
         <line x1="0.5" y1="2.00007" x2="217.673" y2="2.00005" stroke="#4048F5" stroke-width="4"/>
       </svg>
-        <svg class="finmodel__svg finmodel__svg--bottom" viewBox="0 0 515 383" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg id="finmodelSvgBottom" class="finmodel__svg finmodel__svg--bottom" viewBox="0 0 515 383" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="514.5" y1="380.876" x2="0.548004" y2="380.876" stroke="#4048f5" stroke-width="4"/>
           <line y1="-2" x2="381" y2="-2" transform="matrix(-0.000156654 1 -1 -1.02472e-05 0.589661 -3.05176e-05)" stroke="#4048f5" stroke-width="4"/>
         </svg>
-        <img class="finmodel__svg finmodel__svg--adaptiv" src="img/svg/finmodal/line_adaptiv.svg" alt="img">
+        <img id="finmodelSvgAdaptiv" class="finmodel__svg finmodel__svg--adaptiv" src="img/svg/finmodal/line_adaptiv.svg" alt="img">
       <object class="piroliz__svg" id="mySvg" type="image/svg+xml" data="img/svg/finmodal/first.svg"></object>
       <img class="piroliz__png hide" src="img/finmodel/main2 2.png" alt="img">
     </div>
@@ -107,14 +109,14 @@
         и долю в быстроокупаемом бизнес проекте <br>
       </p>
 
-      <div class="about__block about__block--one">
+      <div class="about__block about__block--one animate__animated">
         <div>
           <h3 class="about__block--title about__block--title__one">&gt;5 лет</h3>
           <p class="about__block--text about__block--text__one">Мы разрабатывали нашу установку</p>
         </div>
       </div>
 
-      <div class="about__block about__block--two">
+      <div class="about__block about__block--two animate__animated">
         <div class="centered">
           <h3 class="about__block--title">&gt;1 млн</h3>
         <p class="about__block--subtitle">литров топлива</p>
@@ -123,7 +125,7 @@
         </div>
       </div>
 
-      <div class="about__block about__block--fhree">
+      <div class="about__block about__block--fhree animate__animated">
        <div>
         <h3 class="about__block--title">&gt;300$</h3>
         <p class="about__block--subtitle">тысяч</p>
@@ -134,7 +136,7 @@
        </div>
       </div>
 
-      <div class="about__block about__block--four">
+      <div class="about__block about__block--four animate__animated">
         <div>
           <h3 class="about__block--title">&gt;800</h3>
         <p class="about__block--subtitle">тонн мусора</p>
@@ -283,17 +285,17 @@
       и переработки отходов в продукты энергетики.
     </p>
     <div class="stages__inner">
-      <div class="stages__item stages__item--first">
+      <div class="stages__item stages__item--first animate__animated">
         <img class="stages__item--img" src="img/svg/stages/stageone.svg" alt="image">
         <p class="stages__item--descr">
           Принимаем с доплатой исходное сырье для утилизации
         </p>
       </div>
-      <div class="stages__item stages__item--second">
+      <div class="stages__item stages__item--second animate__animated">
         <img class="stages__item--img"  src="img/svg/stages/stagetwo.svg" alt="image">
         <p class="stages__item--descr">На выходе получаем топливо, уголь, металл, электроэнергию</p>
       </div>
-      <div class="stages__item stages__item--three">
+      <div class="stages__item stages__item--three animate__animated">
         <img class="stages__item--img" src="img/svg/stages/stagethree.svg" alt="image">
         <p class="stages__item--descr">Зарабатываем на продаже полученных продуктов и других, продвинутых вариантах</p>
       </div>
@@ -368,8 +370,11 @@
 
         <img class="recast__item--img" src="img/svg/recast/fourblock.svg" alt="image">
       </div>
+
     </div>
+
   </div>
+  <img id="recastBg" src="img/svg/recast/bg.svg" alt="image" class="recast__bg animate__animated">
 </div>
 
       <section class="products">
@@ -593,54 +598,56 @@
         </p>
       </div>
     </div>
-    <table class="payback__table">
-      <thead>
-        <tr>
+    <div class="table__wrapper">
+      <table class="payback__table">
+        <thead>
+          <tr>
+            <td></td>
+            <td>Выход с одной
+              топки в сутки кг</td>
+            <td>$ цена кг</td>
+            <td>Рабочих дней
+              в месяц</td>
+            <td>Сумма кг в месяц</td>
+            <td>Сумма $ в месяц</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Печное топливо</td>
+            <td>3500</td>
+            <td>0,9</td>
+            <td>25</td>
+            <td>87 500</td>
+            <td>78 750</td>
+          </tr>
+          <tr>
+            <td>Уголь</td>
+            <td>2000</td>
+            <td>0,28</td>
+            <td>25</td>
+            <td>50 000</td>
+            <td>14 000</td>
+          </tr>
+          <tr>
+            <td>Металл</td>
+            <td>1000</td>
+            <td>0,26</td>
+            <td>25</td>
+            <td>25 000</td>
+            <td>6 500</td>
+          </tr>
+        </tbody>
+        <tfoot>
           <td></td>
-          <td>Выход с одной
-            топки в сутки кг</td>
-          <td>$ цена кг</td>
-          <td>Рабочих дней
-            в месяц</td>
-          <td>Сумма кг в месяц</td>
-          <td>Сумма $ в месяц</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Печное топливо</td>
-          <td>3500</td>
-          <td>0,9</td>
-          <td>25</td>
-          <td>87 500</td>
-          <td>78 750</td>
-        </tr>
-        <tr>
-          <td>Уголь</td>
-          <td>2000</td>
-          <td>0,28</td>
-          <td>25</td>
-          <td>50 000</td>
-          <td>14 000</td>
-        </tr>
-        <tr>
-          <td>Металл</td>
-          <td>1000</td>
-          <td>0,26</td>
-          <td>25</td>
-          <td>25 000</td>
-          <td>6 500</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Всего</td>
-        <td>99 250</td>
-      </tfoot>
-    </table>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Всего</td>
+          <td>99 250</td>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -650,7 +657,7 @@
       Как на счет производства собственной электроэнергии?
     </h2>
     <div class="grid own__inner own__inner--first">
-      <div class="own__first--item own__first--item__first">
+      <div class="own__first--item own__first--item__first animate__animated">
         <p class="own__first--item__text">
           С помощью наших пиролизных установоки дизельного электрогенератора вы обеспечите бесперебойной электроэнергией свое производство или жилой комплекс.
         </p>
@@ -726,7 +733,7 @@
           </svg>
 
       </div>
-      <div class="own__first--item own__first--item__second">
+      <div class="own__first--item own__first--item__second animate__animated">
         <svg width="314" height="189" viewBox="0 0 314 189" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M29.8645 153.163H16.5148C15.4103 153.163 14.5148 152.268 14.5148 151.163V143.927C14.5148 143.066 15.0657 142.302 15.8824 142.03L17.0994 141.624C17.9411 141.343 18.4974 140.542 18.4657 139.655L17.217 104.692C17.1963 104.111 17.4291 103.55 17.8548 103.155L23.6469 97.7765C24.8452 96.6638 26.7987 97.373 26.9921 98.9968C28.5809 112.34 30.9929 132.767 31.6788 139.181C31.796 140.277 32.7588 141.153 33.8613 141.156L279.059 141.813C280.056 141.816 280.903 141.083 281.044 140.096L286.932 98.8846C287.16 97.2867 289.09 96.6035 290.273 97.7019L296.146 103.155C296.571 103.55 296.804 104.111 296.783 104.691L295.54 140.121C295.508 141.049 296.251 141.818 297.178 141.818V141.818C298.084 141.818 298.818 142.552 298.818 143.457V151.163C298.818 152.268 297.922 153.163 296.818 153.163H283.468M57.8944 153.163H93.9327M121.295 153.163H191.37M218.732 153.163H255.438" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M46.5491 167.846C47.083 167.846 52.5555 167.846 55.225 167.846M97.2697 167.846H105.946" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
@@ -770,7 +777,7 @@
           Одна наша топка в сутки производит около 3500 литров печного топлива. На дизельный электрогенератор 1 мВт понадобится около 4800 литров в сутки. Чтобы произвести достаточное для 1 мВт электроэнергии топлива, достаточно двух наших пиролизных установок.
         </p>
       </div>
-      <div class="own__first--item own__first--item__three">
+      <div class="own__first--item own__first--item__three animate__animated">
         <svg width="325" height="188" viewBox="0 0 325 188" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.5 140.988V23.7317C0.5 23.0553 1.15834 22.5744 1.79591 22.8002C15.6728 27.7156 22.1664 38.5567 26.0819 47.2268C29.9926 55.8863 31.7377 83.5175 32.1698 97.4597C32.19 98.1135 31.5847 98.6088 30.9364 98.5213C27.6309 98.0746 22.7318 98.52 22.4788 103.075C22.213 107.859 27.8502 110.152 31.3666 110.856C31.8493 110.953 32.3144 110.651 32.4608 110.181C36.0941 98.5135 39.0994 92.674 46.001 84.638C46.1653 84.4467 46.2543 84.1985 46.2456 83.9466L45.1808 53.0666C45.1791 53.0167 45.1741 52.9697 45.165 52.9207C44.1993 47.7142 42.2224 35.3706 41.9355 27.0495C41.6714 19.392 47.0312 7.92485 50.4257 1.89901C50.8058 1.22429 51.7643 1.24455 52.1173 1.93379C55.3724 8.28804 60.4806 20.1633 59.9509 27.0495C59.3744 34.5439 57.789 47.467 57.0684 52.9917L55.645 83.9512C55.6335 84.2004 55.7182 84.4478 55.8773 84.6399C63.5589 93.9139 66.741 99.6997 70.1296 110.159C70.285 110.639 70.7701 110.935 71.2607 110.818C74.7702 109.982 80.8685 107.517 80.1281 103.075C79.4949 99.2749 74.966 98.3506 71.6766 98.59C71.0255 98.6373 70.4417 98.1231 70.4765 97.4712C71.0743 86.2745 70.6062 63.9024 75.8044 48.3077C80.2705 34.9094 92.949 25.9 100.812 22.8318C101.446 22.5844 102.107 23.0655 102.107 23.7461V140.988C102.107 141.54 101.659 141.988 101.107 141.988H75.4778C75.0313 141.988 74.6401 142.281 74.5143 142.71C73.2035 147.174 70.4197 155.65 68.238 158.922C65.9844 162.303 61.2533 167.105 59.0216 169.228C58.9207 169.324 58.8421 169.438 58.7881 169.566L52.2041 185.242C51.8641 186.052 50.7204 186.062 50.3668 185.258L43.4266 169.485C43.3934 169.409 43.3528 169.34 43.3014 169.276C41.556 167.094 36.844 163.183 33.6484 158.922C30.8982 155.255 28.5716 147.441 27.9821 142.901C27.9152 142.386 27.4834 141.988 26.9633 141.988H1.5C0.947715 141.988 0.5 141.54 0.5 140.988Z" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M46.2591 141.268H36.8911C39.1292 149.715 41.3881 153.535 46.9797 158.923L46.2591 141.268Z" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
@@ -806,7 +813,7 @@
     </div>
 
     <div class="grid own__inner own__inner--second">
-      <div class="own__second--item own__second--item--first">
+      <div class="own__second--item own__second--item--first animate__animated">
         <h3 class="own__second--item__title">
           Решают проблему утилизацию неорганического мусора
         </h3>
@@ -814,7 +821,7 @@
           Актуально для стран, не имеющих свободных территорий под полигоны, где вынуждены весь мусор сбрасывать в океан.
         </p>
       </div>
-      <div class="own__second--item own__second--item--second">
+      <div class="own__second--item own__second--item--second animate__animated">
         <h3 class="own__second--item__title">
           Делают энергетические ресурсы более доступными
         </h3>
@@ -822,7 +829,7 @@
           Завозные энергетические ресурсы на островных государствах обходятся значительно дороже.
         </p>
       </div>
-      <div class="own__second--item own__second--item--three">
+      <div class="own__second--item own__second--item--three animate__animated">
         <h3 class="own__second--item__title">
           Избавляют от сложных и дорогостоящих процедур
 с подводкой коммуникаций
@@ -1019,6 +1026,7 @@
 </footer>
 
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"></script>
   <script defer src="js/main.js"></script>
 </body>

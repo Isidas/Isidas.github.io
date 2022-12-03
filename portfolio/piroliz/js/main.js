@@ -53,6 +53,8 @@ ToggleClass1();
 ToggleClass2();
 ToggleClass3();
 ToggleClass4();
+
+////////////////////////////////////////
 const toggleBurger = () => {
   burgerBtn.addEventListener('click', () => {
     burgerMenu.classList.toggle('hide');
@@ -60,7 +62,63 @@ const toggleBurger = () => {
   });
 };
 toggleBurger();
+setTimeout(() => {
+  pirolizPng.classList.remove('hide');
+  pirolizSvg.classList.add('hide');
+}, 2000);
+const aboutWrapper = document.querySelector('.about');
+const stagesWrapper = document.querySelector('.stages');
+const recastWrapper = document.querySelector('.recast');
+const ownWrapper = document.querySelector('.own');
+const animateBlock = (wrapper, block, animateClass) => {
+  wrapper.addEventListener('mouseover', () => {
+    let el = document.querySelectorAll(block);
+    el.forEach(item => {
+      item.classList.add(animateClass);
+    });
+  });
+  // wrapper.addEventListener('mouseout', () => {
+  //   let el = document.querySelectorAll(block);
+  //   el.forEach(item => {
+  //     item.classList.remove(animateClass)
+  //   })
+  // })
+};
 
+animateBlock(aboutWrapper, '.about__block', 'animate__zoomIn');
+animateBlock(stagesWrapper, '.stages__item', 'animate__zoomIn');
+animateBlock(recastWrapper, '.recast__bg', 'animate__fadeInUp');
+animateBlock(ownWrapper, '.own__first--item__first', 'animate__bounceInLeft');
+animateBlock(ownWrapper, '.own__first--item__second', 'animate__bounceInRight');
+animateBlock(ownWrapper, '.own__first--item__three', 'animate__bounceInLeft');
+animateBlock(ownWrapper, '.own__second--item--first', 'animate__bounceInDown');
+animateBlock(ownWrapper, '.own__second--item--second', 'animate__bounceInUp');
+animateBlock(ownWrapper, '.own__second--item--three', 'animate__bounceInDown');
+const ownTitle = document.querySelectorAll('.own__second--item__title');
+const ownSubtitle = document.querySelectorAll('.own__second--item__text');
+const recastTitle = document.querySelectorAll('.recast__item--title');
+const recastSubtitle = document.querySelectorAll('.recast__item--descr');
+const animateText = (wrapper, title, subtitle) => {
+  wrapper.addEventListener('mouseover', () => {
+    title.forEach(item => {
+      item.classList.add('tracking-in-contract');
+    });
+    subtitle.forEach(item => {
+      item.classList.add('text-focus-in');
+    });
+  });
+  // wrapper.addEventListener('mouseout', () => {
+  //   contentTitle.forEach(item => {
+  //     item.classList.remove('tracking-in-contract')
+  //   })
+  //   contentDescr.forEach(item => {
+  //     item.classList.remove('text-focus-in')
+  //   })
+  // })
+};
+
+animateText(ownWrapper, ownTitle, ownSubtitle);
+animateText(recastWrapper, recastTitle, recastSubtitle);
 //  Animate
 
 const mySvg = new Vivus('mySvg', {
@@ -76,10 +134,18 @@ const pdffull2 = new Vivus('pdffuel2', {
   type: 'sync',
   duration: 200
 });
-setTimeout(() => {
-  pirolizPng.classList.remove('hide');
-  pirolizSvg.classList.add('hide');
-}, 2000);
+const finmodelSvgTop = new Vivus('finmodelSvgTop', {
+  type: 'sync',
+  duration: 150
+});
+const finmodelSvgBottom = new Vivus('finmodelSvgBottom', {
+  type: 'sync',
+  duration: 150
+});
+const finmodelSvgAdaptiv = new Vivus('finmodelSvgAdaptiv', {
+  type: 'sync',
+  duration: 150
+});
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
