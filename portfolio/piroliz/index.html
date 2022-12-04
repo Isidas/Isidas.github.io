@@ -96,7 +96,7 @@
   <div class="container">
     <div class="about__inner">
 
-      <p class="about__text about__text--one">
+      <p id="about__text--one" class="about__text about__text--one">
         Это те самые прибыльные <br>
         «мусорные» технологии, о которых <br>
         все говорили, а мы — взяли и сделали! <br>
@@ -153,9 +153,7 @@
 
       <section class="investments">
   <div class="container">
-    <h2 class="title investments__title">
-      Кому выгодно инвестировать <br>
-       в наш проект</h2>
+    <h2 id="investments__title" class="title investments__title"></h2>
        <div class="investments__inner">
         <div class="investments__item investments__item--first animate__animated">
           <div class="img__wrapper">
@@ -196,14 +194,8 @@
 
       <section class="project">
   <div class="container">
-    <h2 class="title centered project__title">
-      В чем суть проекта?
-    </h2>
-    <p class="descr project__descr">
-      Проблема утилизации мусора — одна из самых острых
-      в мире и в Украине. В одних странах на мусор особо
-      не обращают внимания, в других с этой проблемой борются разными способами, а в развитых — решают, используя новейшие технологии.
-    </p>
+    <h2 id="project__title" class="title centered project__title">В чем суть проекта?</h2>
+    <p  class="descr project__descr">Проблема утилизации мусора одна из самых острых в мире и в Украине. В одних странах на мусор особо не обращают внимания, в других с этой проблемой борются разными способами, а в развитых решают, используя новейшие технологии.</p>
     <div class="project__inners">
       <div class="project__inner">
         <div class="project__item project__item--first">
@@ -277,12 +269,11 @@
 
       <section class="stages">
   <div class="container">
-    <h2 class="title centered stages__title">
-      Как это работает?
+    <h2 id="stages__title" class="title centered stages__title">
+
     </h2>
-    <p class="descr stages__descr">
-      Мы производим пиролизные установки для утилизации
-      и переработки отходов в продукты энергетики.
+    <p id="stages__descr" class="descr stages__descr">
+
     </p>
     <div class="stages__inner">
       <div class="stages__item stages__item--first animate__animated">
@@ -374,7 +365,7 @@
     </div>
 
   </div>
-  <img id="recastBg" src="img/svg/recast/bg.svg" alt="image" class="recast__bg animate__animated">
+  <img id="recastBg" src="img/svg/recast/bg.svg" alt="image" class="recast__bg">
 </div>
 
       <section class="products">
@@ -383,7 +374,7 @@
     <p class="descr centered products__descr">в зависимости от сырья мы на выходе получаем:</p>
     <div class="grid products__grid">
       <div class="products__item products__item--first">
-        <h3 class="products__item--title">350-400 кг</h3>
+        <h3 class="products__item--title products__item--title--first">350-400 кг</h3>
         <p class="products__item--descr">Печное топливо</p>
         <img class="products__item--img" src="img/svg/products/firstblock.svg" alt="image">
       </div>
@@ -412,8 +403,7 @@
 
       <section class="pluses">
   <div class="container">
-    <h2 class="title pluses__title">
-      Основные плюсы пиролизной <br> утилизации отходов</h2>
+    <h2 id="pluses__title" class="title pluses__title"></h2>
        <div class="pluses__inner">
         <div class="pluses__item pluses__item--first">
           <div class="img__wrapper">
@@ -471,9 +461,7 @@
       <section class="vantage">
   <div class="container">
     <div class="vintage__wrapper">
-      <h1 class="title vantage__title">
-        Преимущества наших <br> пиролизных установок
-      </h1>
+      <h1 id="vantage__title" class="title vantage__title"></h1>
       <div class="grid vantage__grid">
         <div class="vantage__wrapper-item vantage__wrapper-item--first">
           <div class="vantage__item vantage__item--first">
@@ -880,9 +868,7 @@
 
       <section class="programs">
   <div class="container">
-    <h2 class="title centered programs__title">
-      Мы предлагаем 2 инвестиционные программы на выбор
-    </h2>
+    <h2 id="programs__title" class="title centered programs__title"></h2>
     <div class="programs__inner">
       <div class="programs__item programs__item--first">
         <h3 class="programs__item--title">
@@ -1027,6 +1013,17 @@
 
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+
+<!--
+ScrambleTextPlugin.min.js is a Club GreenSock perk which is not available on a CDN. Download it from your GreenSock account and include it locally like this:
+
+<script src="/[YOUR_DIRECTORY]/ScrambleTextPlugin.min.js"></script>
+
+Sign up at https://greensock.com/club or try them for free on CodePen or CodeSandbox
+-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"></script>
   <script defer src="js/main.js"></script>
 </body>
