@@ -28,7 +28,7 @@
           <li class="list__item"><a href="#" class="menu__link">Контакты</a></li>
         </ul>
       </nav>
-      <div class="menu__burger active__burger">
+      <div class="menu__burger">
         <div class="burger__line one"></div>
         <div class="burger__line two"></div>
         <div class="burger__line three"></div>
@@ -72,6 +72,7 @@
         <img id="finmodelSvgAdaptiv" class="finmodel__svg finmodel__svg--adaptiv" src="img/svg/finmodal/line_adaptiv.svg" alt="img">
       <object class="piroliz__svg" id="mySvg" type="image/svg+xml" data="img/svg/finmodal/first.svg"></object>
       <img class="piroliz__png hide" src="img/finmodel/main2 2.png" alt="img">
+      <video class="piroliz__video" autoplay src="/img/video/Анимация машина сжигания.mp4"></video>
     </div>
   </div>
 </section>
@@ -287,7 +288,7 @@
         <p class="stages__item--descr">На выходе получаем топливо, уголь, металл, электроэнергию</p>
       </div>
       <div class="stages__item stages__item--three animate__animated">
-        <img class="stages__item--img" src="img/svg/stages/stagethree.svg" alt="image">
+        <img class="stages__item--img" src="img/svg/stages/Group 161.png" alt="image">
         <p class="stages__item--descr">Зарабатываем на продаже полученных продуктов и других, продвинутых вариантах</p>
       </div>
     </div>
@@ -374,22 +375,22 @@
     <p class="descr centered products__descr">в зависимости от сырья мы на выходе получаем:</p>
     <div class="grid products__grid">
       <div class="products__item products__item--first">
-        <h3 class="products__item--title products__item--title--first">350-400 кг</h3>
+        <h3 id="productItemFirst" class="products__item--title products__item--title--first">350-400 кг</h3>
         <p class="products__item--descr">Печное топливо</p>
         <img class="products__item--img" src="img/svg/products/firstblock.svg" alt="image">
       </div>
       <div class="products__item products__item--second">
-        <h3 class="products__item--title">15 кубов</h3>
+        <h3 id="productItemSecond" class="products__item--title">15 кубов</h3>
         <p class="products__item--descr">Кипяток</p>
         <img class="products__item--img" src="img/svg/products/secondblock.svg" alt="image">
       </div>
       <div class="products__item products__item--three">
-        <h3 class="products__item--title">200 кг</h3>
+        <h3 id="productItemThird" class="products__item--title">200 кг</h3>
         <p class="products__item--descr">Твердый уголь</p>
         <img class="products__item--img" src="img/svg/products/threeblock.svg" alt="image">
       </div>
       <div class="products__item products__item--four">
-        <h3 class="products__item--title">150 кг</h3>
+        <h3 id="productItemFourth" class="products__item--title">150 кг</h3>
         <p class="products__item--descr">Металл</p>
         <img class="products__item--img" src="img/svg/products/fourblock.svg" alt="image">
       </div>
@@ -401,6 +402,13 @@
   </div>
 </section>
 
+      <section class="videoblock">
+    <div class="container">
+        <div class="videoblock__wrapper">
+            <video class="video" loop="loop" autoplay="autoplay" src="/img/video/Рендер анимации сжигания.mp4"></video>
+        </div>
+    </div>
+</section>
       <section class="pluses">
   <div class="container">
     <h2 id="pluses__title" class="title pluses__title"></h2>
@@ -837,10 +845,10 @@
         <p class="futures__text">
           Вы можете инвестировать только в пиролизную установку по переработке отходов и получать прибыль от продажи топлива.
         </p>
-        <img class="futures__img" src="img/svg/future/firstblock.svg" alt="image">
+        <object class="futures__img" id="futuresSvg1" type="image/svg+xml" data="img/svg/future/firstblock.svg"></object>
       </div>
       <div class="futures__inner futures__inner--second">
-        <img class="futures__img" src="img/svg/future/secondblock.svg" alt="image">
+        <object class="futures__img" id="futuresSvg2" type="image/svg+xml" data="img/svg/future/secondblock.svg"></object>
         <div class="futures__inner--content">
           <h3 class="futures__inner--title">
             А можете увеличить инвестиции, чтобы раз и навсегда решить вопрос с поставкой электроэнергии или перейти на долгосрочный пассивный доход.
@@ -860,7 +868,7 @@
          <li>Закупить свою технику
           и зарабатывать на майнинге</li>
         </ul>
-        <img class="futures__img" src="img/svg/future/threeblock.svg" alt="image">
+        <object class="futures__img" id="futuresSvg3" type="image/svg+xml" data="img/svg/future/threeblock.svg"></object>
       </div>
     </div>
   </div>
@@ -995,14 +1003,14 @@
 
     <footer class="footer">
   <div class="container">
-    <div class="header__inner footer__inner">
+    <div class="footer__inner">
       <div class="logo"></div>
-      <div class="inner">
-        <nav class="menu">
-          <ul class="menu__list">
-            <li class="list__item"><a href="#" class="menu__link">Финансовая аналитика</a></li>
-            <li class="list__item"><a href="#" class="menu__link">Реквизиты компании</a></li>
-            <li class="list__item"><a href="#" class="menu__link">Контакты</a></li>
+      <div class="footer__block--inner">
+        <nav class="footer__block--menu">
+          <ul class="footer__block--menu__list">
+            <li class="footer__block--list__item"><a href="#" class="menu__link">Финансовая аналитика</a></li>
+            <li class="footer__block--list__item"><a href="#" class="menu__link">Реквизиты компании</a></li>
+            <li class="footer__block--list__item"><a href="#" class="menu__link">Контакты</a></li>
           </ul>
         </nav>
         <a class="policy" href="#">Политика конфиденциальности</a>

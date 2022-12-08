@@ -3,6 +3,46 @@ var __webpack_exports__ = {};
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
+const mySvg = new Vivus('mySvg', {
+  type: 'sync',
+  duration: 150,
+  start: 'autostart'
+});
+const pdffull1 = new Vivus('pdffuel1', {
+  type: 'sync',
+  duration: 200
+});
+const pdffull2 = new Vivus('pdffuel2', {
+  type: 'sync',
+  duration: 200
+});
+const finmodelSvgTop = new Vivus('finmodelSvgTop', {
+  type: 'sync',
+  duration: 150
+});
+const finmodelSvgBottom = new Vivus('finmodelSvgBottom', {
+  type: 'sync',
+  duration: 150
+});
+// const finmodelSvgAdaptiv = new Vivus(
+//   'finmodelSvgAdaptiv',
+//   {
+//     type: 'sync',
+//     duration: 150,
+//   },
+// );
+const futureslSvg1 = new Vivus('futuresSvg1', {
+  type: 'sync',
+  duration: 200
+});
+const futureslSvg2 = new Vivus('futuresSvg2', {
+  type: 'sync',
+  duration: 200
+});
+const futureslSvg3 = new Vivus('futuresSvg3', {
+  type: 'sync',
+  duration: 200
+});
 const aboutWrapper = document.querySelector('.about');
 const stagesWrapper = document.querySelector('.stages');
 const investmentsWrapper = document.querySelector('.investments');
@@ -23,27 +63,6 @@ const titleFinmodel = new Typed('.finmodel__title', {
   fadeOutDelay: 500,
   showCursor: false
 });
-// const textAbout1 = new Typed('.about__text--one', {
-//   strings: ["Это те самые прибыльные <br> мусорные технологии, которых <br> все говорили, а мы  взяли и сделали!"],
-//   typeSpeed: 10,
-//   fadeOut: true,
-//   fadeOutDelay: 0,
-//   showCursor: false,
-//   loop: false,
-//   shuffle: false,
-//   loopCount: 1,
-
-// });
-// const textAbout2 = new Typed('.about__text--two', {
-//   strings: ["А теперь хотим масштабировать <br> и развивать это направление, <br> предоставив вам нашу технологии <br> и долю в быстроокупаемом бизнес проекте"],
-//   typeSpeed: 10,
-//   fadeOut: true,
-//   fadeOutDelay: 0,
-//   showCursor: false,
-//   loop: false,
-//   shuffle: false,
-//   loopCount: 1,
-// });
 
 // FAQ
 
@@ -59,10 +78,11 @@ const faqBtn1 = document.querySelector('.faq__item--btn--first'),
   faqTitle2 = document.querySelector('.faq__item--title--second'),
   faqTitle3 = document.querySelector('.faq__item--title--three'),
   faqTitle4 = document.querySelector('.faq__item--title--four'),
+  munuHeader = document.querySelector('.menu'),
   burgerBtn = document.querySelector('.menu__burger'),
-  pirolizPng = document.querySelector('.piroliz__png');
-pirolizSvg = document.querySelector('.piroliz__svg');
-burgerMenu = document.querySelector('.menu');
+  pirolizPng = document.querySelector('.piroliz__png'),
+  pirolizSvg = document.querySelector('.piroliz__svg'),
+  burgerMenu = document.querySelector('.menu');
 function ToggleClass1() {
   faqBtn1.addEventListener('click', e => {
     faqBtn1.classList.toggle('faq__item--btn__open');
@@ -99,7 +119,7 @@ ToggleClass4();
 ////////////////////////////////////////
 const toggleBurger = () => {
   burgerBtn.addEventListener('click', () => {
-    burgerMenu.classList.toggle('hide');
+    munuHeader.classList.toggle('menu__active');
     burgerBtn.classList.toggle('active__burger');
   });
 };
@@ -260,6 +280,21 @@ const animateBlockProcess = wrapper => {
   });
 };
 animateBlockProcess(processWrapper);
+const time = 1000;
+const step = 1;
+const outNum = (num, elem) => {
+  let l = document.querySelector('#' + elem);
+  n = 0;
+  let t = Math.round(time / (num / step));
+  let interval = setInterval(() => {
+    n = n + step;
+    if (n === num) {
+      clearInterval(interval);
+    }
+    l.innerHTML = n;
+  }, t);
+};
+outNum(350, 'count');
 const animateBlockProducts = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.products__item--first');
@@ -501,34 +536,6 @@ const animateBlockPrograms = wrapper => {
   });
 };
 animateBlockPrograms(programsWrapper);
-
-//  Animate
-
-const mySvg = new Vivus('mySvg', {
-  type: 'sync',
-  duration: 150,
-  start: 'autostart'
-});
-const pdffull1 = new Vivus('pdffuel1', {
-  type: 'sync',
-  duration: 200
-});
-const pdffull2 = new Vivus('pdffuel2', {
-  type: 'sync',
-  duration: 200
-});
-const finmodelSvgTop = new Vivus('finmodelSvgTop', {
-  type: 'sync',
-  duration: 150
-});
-const finmodelSvgBottom = new Vivus('finmodelSvgBottom', {
-  type: 'sync',
-  duration: 150
-});
-const finmodelSvgAdaptiv = new Vivus('finmodelSvgAdaptiv', {
-  type: 'sync',
-  duration: 150
-});
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
