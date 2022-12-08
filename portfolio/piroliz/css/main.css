@@ -363,10 +363,13 @@ a {
   padding-top: 5px;
 }
 .finmodel__title {
+  position: relative;
+  z-index: 20;
   margin-bottom: 51px;
   height: 234px;
 }
 .finmodel__inner {
+  z-index: 20;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,6 +380,7 @@ a {
   flex-direction: column;
 }
 .finmodel__inner .piroliz__svg {
+  z-index: 1;
   position: absolute;
   width: 63%;
   right: -28px;
@@ -386,17 +390,9 @@ a {
   transition: 0.7s ease-in;
 }
 .finmodel__inner .piroliz__png {
+  z-index: 1;
   position: absolute;
   width: 63%;
-  right: -28px;
-  top: 30px;
-  -webkit-transition: 1s ease-in;
-  -o-transition: 1s ease-in;
-  transition: 1s ease-in;
-}
-.finmodel__inner .piroliz__video {
-  position: absolute;
-  width: 100%;
   right: -28px;
   top: 30px;
   -webkit-transition: 1s ease-in;
@@ -408,6 +404,7 @@ a {
   visibility: hidden;
 }
 .finmodel__list {
+  z-index: 20;
   margin: 0 0 0 120px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -418,6 +415,7 @@ a {
   gap: 50px;
 }
 .finmodel__item {
+  z-index: 20;
   position: relative;
 }
 .finmodel__item--title {
@@ -445,6 +443,7 @@ a {
   transform: rotate(20deg);
 }
 .finmodel__svg {
+  z-index: 20;
   position: absolute;
 }
 .finmodel__svg--top {
@@ -2365,6 +2364,7 @@ a {
   }
 }
 .videoblock {
+  padding: 50px 0;
   background-color: #fff;
 }
 .videoblock .videoblock__wrapper {
@@ -2383,6 +2383,18 @@ a {
   height: auto;
 }
 
+@media screen and (max-width: 1024px) {
+  .videoblock .videoblock__title {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .videoblock .videoblock__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+}
 .pluses {
   padding-top: 120px;
   padding-bottom: 141px;
@@ -3653,16 +3665,9 @@ a {
     height: 0px;
   }
   .payback .table__wrapper {
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 110%;
     visibility: visible;
-  }
-  .payback .table__wrapper::-webkit-scrollbar {
-    width: 13px;
-    height: 13px;
-  }
-  .payback .table__wrapper::-webkit-scrollbar-button {
-    background-color: #4048F5;
   }
 }
 @media screen and (max-width: 768px) {
