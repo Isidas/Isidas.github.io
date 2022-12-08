@@ -163,6 +163,41 @@ const animateBlockAbout = wrapper => {
   });
 };
 animateBlockAbout(aboutWrapper);
+const animateBlockAboutAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.about__block--one');
+    let el2 = document.querySelector('.about__block--two');
+    let el3 = document.querySelector('.about__block--fhree');
+    let el4 = document.querySelector('.about__block--four');
+    let t1 = document.querySelector('.about__text--one');
+    let t2 = document.querySelector('.about__text--two');
+    setTimeout(() => {
+      el1.classList.add('animate__zoomIn');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__zoomIn');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__zoomIn');
+      el3.classList.add('block-visible');
+    }, 1000);
+    setTimeout(() => {
+      el4.classList.add('animate__zoomIn');
+      el4.classList.add('block-visible');
+    }, 1500);
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t2.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t2.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+      t2.classList.add('tracking-in-expand-fwd');
+    }, 2000);
+  });
+};
+animateBlockAboutAdaptiv(aboutWrapper);
 const animateBlockStages = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.stages__item--first');
@@ -193,6 +228,36 @@ const animateBlockStages = wrapper => {
   });
 };
 animateBlockStages(stagesWrapper);
+const animateBlockStagesAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.stages__item--first');
+    let el2 = document.querySelector('.stages__item--second');
+    let el3 = document.querySelector('.stages__item--three');
+    gsap.to("#stages__title", {
+      duration: 1,
+      text: "Как это работает?",
+      delay: 1
+    });
+    gsap.to("#stages__descr", {
+      duration: 2,
+      text: "Мы производим пиролизные установки для утилизации и переработки отходов в продукты энергетики.",
+      delay: 1
+    });
+    setTimeout(() => {
+      el1.classList.add('animate__zoomIn');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__zoomIn');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__zoomIn');
+      el3.classList.add('block-visible');
+    }, 1000);
+  });
+};
+animateBlockStagesAdaptiv(stagesWrapper);
 const animateBlockInvestments = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.investments__item--first');
@@ -218,6 +283,31 @@ const animateBlockInvestments = wrapper => {
   });
 };
 animateBlockInvestments(investmentsWrapper);
+const animateBlockInvestmentsAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.investments__item--first');
+    let el2 = document.querySelector('.investments__item--second');
+    let el3 = document.querySelector('.investments__item--three');
+    gsap.to("#investments__title", {
+      duration: 2,
+      text: "Кому выгодно инвестировать <br> в наш проект",
+      ease: "none"
+    });
+    setTimeout(() => {
+      el1.classList.add('animate__zoomIn');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__zoomIn');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__zoomIn');
+      el3.classList.add('block-visible');
+    }, 1000);
+  });
+};
+animateBlockInvestmentsAdaptiv(investmentsWrapper);
 const animateBlockProject = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.project__item--first');
@@ -257,6 +347,45 @@ const animateBlockProject = wrapper => {
   });
 };
 animateBlockProject(projectsWrapper);
+const animateBlockProjectAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.project__item--first');
+    let el2 = document.querySelector('.project__item--second');
+    let el3 = document.querySelector('.project__item--three');
+    let el4 = document.querySelector('.project__item--four');
+    let t1 = document.querySelector('.project__descr');
+    let t2 = document.querySelector('.project__title');
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__fadeInLeft');
+      el3.classList.add('block-visible');
+    }, 1000);
+    setTimeout(() => {
+      el4.classList.add('animate__animated');
+      el4.classList.add('animate__fadeInRight');
+      el4.classList.add('block-visible');
+    }, 1500);
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+      t2.classList.add('block-visible');
+      t2.classList.add('tracking-in-expand-fwd');
+      t2.classList.add('animate__animated');
+    }, 0);
+  });
+};
+animateBlockProjectAdaptiv(projectsWrapper);
 const animateBlockProcess = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.process__inner--first');
@@ -280,21 +409,29 @@ const animateBlockProcess = wrapper => {
   });
 };
 animateBlockProcess(processWrapper);
-const time = 1000;
-const step = 1;
-const outNum = (num, elem) => {
-  let l = document.querySelector('#' + elem);
-  n = 0;
-  let t = Math.round(time / (num / step));
-  let interval = setInterval(() => {
-    n = n + step;
-    if (n === num) {
-      clearInterval(interval);
-    }
-    l.innerHTML = n;
-  }, t);
+const animateBlockProcessAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.process__inner--first');
+    let el2 = document.querySelector('.process__inner--second');
+    let t1 = document.querySelector('.process__title');
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+    }, 0);
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+  });
 };
-outNum(350, 'count');
+animateBlockProcessAdaptiv(processWrapper);
 const animateBlockProducts = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.products__item--first');
@@ -336,6 +473,47 @@ const animateBlockProducts = wrapper => {
   });
 };
 animateBlockProducts(productsWrapper);
+const animateBlockProductsAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.products__item--first');
+    let el2 = document.querySelector('.products__item--second');
+    let el3 = document.querySelector('.products__item--three');
+    let el4 = document.querySelector('.products__item--four');
+    let el5 = document.querySelector('.products__item--five');
+    let t1 = document.querySelector('.products__title');
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+    }, 0);
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInTopLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__fadeInLeft');
+      el3.classList.add('block-visible');
+    }, 1000);
+    setTimeout(() => {
+      el4.classList.add('animate__animated');
+      el4.classList.add('animate__fadeInBottomLeft');
+      el4.classList.add('block-visible');
+    }, 1500);
+    setTimeout(() => {
+      el5.classList.add('animate__animated');
+      el5.classList.add('animate__fadeInDown');
+      el5.classList.add('block-visible');
+    }, 2000);
+  });
+};
+animateBlockProductsAdaptiv(productsWrapper);
 const animateBlockPluses = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.pluses__item--first');
@@ -364,6 +542,34 @@ const animateBlockPluses = wrapper => {
   });
 };
 animateBlockPluses(plusesWrapper);
+const animateBlockPlusesAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.pluses__item--first');
+    let el2 = document.querySelector('.pluses__item--second');
+    let el3 = document.querySelector('.pluses__item--three');
+    gsap.to("#pluses__title", {
+      duration: 2,
+      text: "Основные плюсы пиролизной <br> утилизации отходов",
+      ease: "none"
+    });
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__zoomIn');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__zoomIn');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__zoomIn');
+      el3.classList.add('block-visible');
+    }, 1000);
+  });
+};
+animateBlockPlusesAdaptiv(plusesWrapper);
 const animateBlockVantage = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.vantage__item--first');
@@ -410,6 +616,52 @@ const animateBlockVantage = wrapper => {
   });
 };
 animateBlockVantage(vantageWrapper);
+const animateBlockVantageAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.vantage__item--first');
+    let el2 = document.querySelector('.vantage__item--second');
+    let el3 = document.querySelector('.vantage__item--three');
+    let el4 = document.querySelector('.vantage__item--four');
+    let el5 = document.querySelector('.vantage__item--five');
+    let el6 = document.querySelector('.vantage__item--six');
+    gsap.to("#vantage__title", {
+      duration: 2,
+      text: "Преимущества наших <br> пиролизных установок",
+      ease: "none"
+    });
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInTopLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__fadeInLeft');
+      el3.classList.add('block-visible');
+    }, 1000);
+    setTimeout(() => {
+      el4.classList.add('animate__animated');
+      el4.classList.add('animate__fadeInBottomLeft');
+      el4.classList.add('block-visible');
+    }, 1500);
+    setTimeout(() => {
+      el5.classList.add('animate__animated');
+      el5.classList.add('animate__fadeInDown');
+      el5.classList.add('block-visible');
+    }, 2000);
+    setTimeout(() => {
+      el6.classList.add('animate__animated');
+      el6.classList.add('animate__fadeInDown');
+      el6.classList.add('block-visible');
+    }, 2500);
+  });
+};
+animateBlockVantageAdaptiv(vantageWrapper);
 const animateBlockApperance = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el2 = document.querySelector('.apperance__img--first');
@@ -433,6 +685,29 @@ const animateBlockApperance = wrapper => {
   });
 };
 animateBlockApperance(apperanceWrapper);
+const animateBlockApperanceAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el2 = document.querySelector('.apperance__img--first');
+    let el1 = document.querySelector('.apperance__img--second');
+    let t1 = document.querySelector('.apperance__title');
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+    }, 0);
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+  });
+};
+animateBlockApperanceAdaptiv(apperanceWrapper);
 const animateBlockPayback = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.payback__item--first');
@@ -462,6 +737,35 @@ const animateBlockPayback = wrapper => {
   });
 };
 animateBlockPayback(paybackWrapper);
+const animateBlockPaybackAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.payback__item--first');
+    let el2 = document.querySelector('.payback__item--second');
+    let el3 = document.querySelector('.payback__item--three');
+    let t1 = document.querySelector('.payback__title');
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+    }, 0);
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__zoomIn');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__zoomIn');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__zoomIn');
+      el3.classList.add('block-visible');
+    }, 1000);
+  });
+};
+animateBlockPaybackAdaptiv(paybackWrapper);
 const animateBlockRecast = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.recast__item--first');
@@ -497,6 +801,41 @@ const animateBlockRecast = wrapper => {
   });
 };
 animateBlockRecast(recastWrapper);
+const animateBlockRecastAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.recast__item--first');
+    let el2 = document.querySelector('.recast__item--second');
+    let el3 = document.querySelector('.recast__item--three');
+    let el4 = document.querySelector('.recast__item--four');
+    let el5 = document.querySelector('.recast__bg');
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInTopLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__fadeInLeft');
+      el3.classList.add('block-visible');
+    }, 1000);
+    setTimeout(() => {
+      el4.classList.add('animate__animated');
+      el4.classList.add('animate__fadeInBottomLeft');
+      el4.classList.add('block-visible');
+    }, 1500);
+    setTimeout(() => {
+      el5.classList.add('animate__animated');
+      el5.classList.add('animate__fadeInDown');
+      el5.classList.add('block-visible');
+    }, 2000);
+  });
+};
+animateBlockRecastAdaptiv(recastWrapper);
 const animateBlockOwn = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     let el1 = document.querySelector('.own__first--item__first');
@@ -526,6 +865,35 @@ const animateBlockOwn = wrapper => {
   });
 };
 animateBlockOwn(ownWrapper);
+const animateBlockOwnAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    let el1 = document.querySelector('.own__first--item__first');
+    let el2 = document.querySelector('.own__first--item__second');
+    let el3 = document.querySelector('.own__first--item__three');
+    let t1 = document.querySelector('.own__title');
+    setTimeout(() => {
+      t1.classList.add('block-visible');
+      t1.classList.add('animate__animated');
+      t1.classList.add('tracking-in-expand-fwd');
+    }, 0);
+    setTimeout(() => {
+      el1.classList.add('animate__animated');
+      el1.classList.add('animate__fadeInLeft');
+      el1.classList.add('block-visible');
+    }, 0);
+    setTimeout(() => {
+      el2.classList.add('animate__animated');
+      el2.classList.add('animate__fadeInRight');
+      el2.classList.add('block-visible');
+    }, 500);
+    setTimeout(() => {
+      el3.classList.add('animate__animated');
+      el3.classList.add('animate__fadeInLeft');
+      el3.classList.add('block-visible');
+    }, 1000);
+  });
+};
+animateBlockOwnAdaptiv(ownWrapper);
 const animateBlockPrograms = wrapper => {
   wrapper.addEventListener('mouseover', () => {
     gsap.to("#programs__title", {
@@ -536,6 +904,16 @@ const animateBlockPrograms = wrapper => {
   });
 };
 animateBlockPrograms(programsWrapper);
+const animateBlockProgramsAdaptiv = wrapper => {
+  wrapper.addEventListener('touchstart', () => {
+    gsap.to("#programs__title", {
+      duration: 2,
+      text: "Мы предлагаем 2 инвестиционные программы на выбор",
+      ease: "none"
+    });
+  });
+};
+animateBlockProgramsAdaptiv(programsWrapper);
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
