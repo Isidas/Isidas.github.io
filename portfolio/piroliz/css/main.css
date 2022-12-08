@@ -267,11 +267,11 @@ a {
     visibility: visible;
     padding: 0 20px;
     position: absolute;
-    right: 0;
+    right: -20px;
     top: 0;
     width: 50vw;
     height: 35vh;
-    padding: 20px;
+    padding: 35px;
     background-color: #FFFFFF;
     -webkit-transition: 0.2s ease-in-out;
     -o-transition: 0.2s ease-in-out;
@@ -305,7 +305,8 @@ a {
     display: block;
     position: relative;
     z-index: 150;
-    right: 30px;
+    top: -10px;
+    right: 15px;
   }
   .header__inner .menu__burger .burger__line {
     width: 35px;
@@ -462,6 +463,11 @@ a {
   display: none;
 }
 
+@media screen and (max-width: 1842px) {
+  .finmodel__title {
+    height: 300px;
+  }
+}
 @media screen and (max-width: 1440px) {
   .finmodel__title {
     font-size: 60px;
@@ -852,7 +858,7 @@ a {
     gap: 16px;
   }
   .finmodel__form--input {
-    width: auto;
+    width: 250px;
     height: 50px;
   }
   .finmodel__form--btn {
@@ -888,13 +894,13 @@ a {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    gap: 16px;
+    gap: 10px;
   }
   .finmodel__form--input {
     padding: 5px;
-    width: auto;
+    width: 250px;
     height: 50px;
-    font-size: 18px;
+    font-size: 14px;
   }
   .finmodel__form--btn {
     width: auto;
@@ -2041,8 +2047,8 @@ a {
   justify-content: end;
 }
 .process__inner--second svg {
-  left: 0;
-  bottom: 0;
+  left: -1px;
+  bottom: -1px;
 }
 .process .block-visible {
   opacity: 1;
