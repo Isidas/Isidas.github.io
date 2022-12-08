@@ -3657,6 +3657,13 @@ a {
     width: 110%;
     visibility: visible;
   }
+  .payback .table__wrapper::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+  .payback .table__wrapper::-webkit-scrollbar-button {
+    background-color: #4048F5;
+  }
 }
 @media screen and (max-width: 768px) {
   .payback .payback__title {
