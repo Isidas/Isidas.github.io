@@ -3507,6 +3507,15 @@ a {
 .payback .table__wrapper .payback__table tfoot tr td:last-child {
   border-right: none;
 }
+.payback .table__wrapper::-webkit-scrollbar-thumb {
+  background-color: #4048F5;
+  border-radius: 20px;
+  border: none;
+}
+.payback .table__wrapper::-webkit-scrollbar {
+  margin-top: 3px;
+  width: 10px;
+}
 
 @media screen and (max-width: 1440px) {
   .payback__inner {
