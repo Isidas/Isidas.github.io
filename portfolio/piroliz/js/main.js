@@ -162,7 +162,7 @@ const animateBlockAbout = wrapper => {
   });
 };
 const animateBlockAboutAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.about__block--one');
     let el2 = document.querySelector('.about__block--two');
     let el3 = document.querySelector('.about__block--fhree');
@@ -220,7 +220,7 @@ const animateBlockInvestments = wrapper => {
   });
 };
 const animateBlockInvestmentsAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.investments__item--first');
     let el2 = document.querySelector('.investments__item--second');
     let el3 = document.querySelector('.investments__item--three');
@@ -282,7 +282,7 @@ const animateBlockProject = wrapper => {
   });
 };
 const animateBlockProjectAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.project__item--first');
     let el2 = document.querySelector('.project__item--second');
     let el3 = document.querySelector('.project__item--three');
@@ -349,7 +349,7 @@ const animateBlockStages = wrapper => {
   });
 };
 const animateBlockStagesAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.stages__item--first');
     let el2 = document.querySelector('.stages__item--second');
     let el3 = document.querySelector('.stages__item--three');
@@ -400,7 +400,7 @@ const animateBlockProcess = wrapper => {
   });
 };
 const animateBlockProcessAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.process__inner--first');
     let el2 = document.querySelector('.process__inner--second');
     let t1 = document.querySelector('.process__title');
@@ -456,7 +456,7 @@ const animateBlockRecast = wrapper => {
   });
 };
 const animateBlockRecastAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.recast__item--first');
     let el2 = document.querySelector('.recast__item--second');
     let el3 = document.querySelector('.recast__item--three');
@@ -530,7 +530,7 @@ const animateBlockProducts = wrapper => {
   });
 };
 const animateBlockProductsAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.products__item--first');
     let el2 = document.querySelector('.products__item--second');
     let el3 = document.querySelector('.products__item--three');
@@ -597,7 +597,7 @@ const animateBlockPluses = wrapper => {
   });
 };
 const animateBlockPlusesAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.pluses__item--first');
     let el2 = document.querySelector('.pluses__item--second');
     let el3 = document.querySelector('.pluses__item--three');
@@ -669,7 +669,7 @@ const animateBlockVantage = wrapper => {
   });
 };
 const animateBlockVantageAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.vantage__item--first');
     let el2 = document.querySelector('.vantage__item--second');
     let el3 = document.querySelector('.vantage__item--three');
@@ -736,7 +736,7 @@ const animateBlockApperance = wrapper => {
   });
 };
 const animateBlockApperanceAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el2 = document.querySelector('.apperance__img--first');
     let el1 = document.querySelector('.apperance__img--second');
     let t1 = document.querySelector('.apperance__title');
@@ -786,7 +786,7 @@ const animateBlockPayback = wrapper => {
   });
 };
 const animateBlockPaybackAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.payback__item--first');
     let el2 = document.querySelector('.payback__item--second');
     let el3 = document.querySelector('.payback__item--three');
@@ -842,7 +842,7 @@ const animateBlockOwn = wrapper => {
   });
 };
 const animateBlockOwnAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     let el1 = document.querySelector('.own__first--item__first');
     let el2 = document.querySelector('.own__first--item__second');
     let el3 = document.querySelector('.own__first--item__three');
@@ -880,7 +880,7 @@ const animateBlockPrograms = wrapper => {
 };
 animateBlockPrograms(programsWrapper);
 const animateBlockProgramsAdaptiv = wrapper => {
-  wrapper.addEventListener('touchmove', () => {
+  wrapper.addEventListener('touchcancel', () => {
     gsap.to("#programs__title", {
       duration: 2,
       text: "Мы предлагаем 2 инвестиционные программы на выбор",
