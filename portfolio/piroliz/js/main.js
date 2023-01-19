@@ -116,8 +116,6 @@ ToggleClass1();
 ToggleClass2();
 ToggleClass3();
 ToggleClass4();
-
-////////////////////////////////////////
 const toggleBurger = () => {
   burgerBtn.addEventListener('click', () => {
     munuHeader.classList.toggle('menu__active');
