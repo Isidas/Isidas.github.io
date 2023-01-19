@@ -2416,6 +2416,9 @@ a {
   width: 100%;
   height: auto;
 }
+.videoblock .videoblock__wrapper .video_desctop {
+  display: block;
+}
 .videoblock .videoblock__wrapper .video_mobile {
   display: none;
 }
