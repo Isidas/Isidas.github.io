@@ -43,6 +43,7 @@ const futureslSvg3 = new Vivus('futuresSvg3', {
   type: 'sync',
   duration: 200
 });
+const finmodelWrapper = document.querySelector('.finmodel-form');
 const aboutWrapper = document.querySelector('.about');
 const stagesWrapper = document.querySelector('.stages');
 const investmentsWrapper = document.querySelector('.investments');
@@ -162,7 +163,7 @@ const animateBlockAbout = wrapper => {
     }, 2000);
   });
 };
-animateBlockAbout(aboutWrapper);
+animateBlockAbout(finmodelWrapper);
 const animateBlockAboutAdaptiv = wrapper => {
   wrapper.addEventListener('touchstart', () => {
     let el1 = document.querySelector('.about__block--one');
