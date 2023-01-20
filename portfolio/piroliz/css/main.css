@@ -270,7 +270,7 @@ a {
     right: -20px;
     top: 0;
     width: 50vw;
-    height: 35vh;
+    height: 40vh;
     padding: 35px;
     background-color: #FFFFFF;
     -webkit-transition: 0.2s ease-in-out;
@@ -4774,6 +4774,7 @@ a {
   }
   .faq__item--title__open {
     color: var(--finmodal-title);
+    font-size: 24px;
   }
   .faq__item--btn {
     width: 26px;
@@ -4796,6 +4797,21 @@ a {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+}
+@media screen and (max-width: 425px) {
+  .faq {
+    padding: 80px 0 100px 0;
+  }
+  .faq__title {
+    font-size: 36px;
+  }
+  .faq__item--title {
+    font-size: 18px;
+  }
+  .faq__item--title__open {
+    color: var(--finmodal-title);
+    font-size: 18px;
   }
 }
 .contacts {
