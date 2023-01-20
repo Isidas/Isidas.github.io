@@ -848,6 +848,9 @@ a {
   }
 }
 @media screen and (max-width: 425px) {
+  .finmodel__form {
+    margin-top: 50px;
+  }
   .finmodel__form--title {
     font-size: 24px;
     margin-bottom: 10px;
@@ -2226,7 +2229,7 @@ a {
 }
 @media screen and (max-width: 768px) {
   .recast {
-    padding: 0 0 20px 0;
+    padding: 50px 0 20px 0;
   }
   .recast__grid {
     display: -webkit-box;
