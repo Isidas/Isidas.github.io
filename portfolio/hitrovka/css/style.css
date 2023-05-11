@@ -403,6 +403,9 @@ template {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   margin: 0 auto;
   width: 90vw;
   bottom: 2%;
@@ -428,22 +431,6 @@ template {
   height: 46px;
   -o-object-fit: contain;
   object-fit: contain;
-}
-@media screen and (max-width: 800px) {
-  .card_block .card_label .age {
-    width: 47px;
-    height: 30px;
-  }
-}
-@media (max-height: 720px) {
-  .card_block .card_label .age {
-    margin-top: 125px;
-  }
-}
-@media (max-height: 720px) {
-  .card_block .card_label {
-    top: 125%;
-  }
 }
 .card_block .card_mobile-img {
   z-index: 0;
@@ -963,7 +950,8 @@ template {
 }
 @media (max-width: 728px) {
   .main_link {
-    bottom: 70px;
+    bottom: 90px;
+    width: 60vw;
   }
 }
 @media (max-height: 700px) {
@@ -1068,11 +1056,42 @@ template {
     background-size: cover;
   }
 }
-@media (max-height: 720px) {
+@media (max-height: 720px) and (max-width: 1440px) {
+  .kvartira .card_text .card_title {
+    font-size: 64px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
   .kvartira .card_text .card_title {
     font-size: 36px;
     line-height: 30px;
     margin-bottom: 10px;
+  }
+}
+@media (max-height: 720px) and (max-width: 1440px) {
+  .kvartira .card_text .card_subtitle {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
+  .kvartira .card_text .card_subtitle {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+@media (max-height: 720px) and (max-width: 500px) {
+  .kvartira .card_text .card_subtitle {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+@media (max-height: 500px) and (max-width: 1440px) {
+  .kvartira .card_text .card_subtitle {
+    font-size: 18px;
+    line-height: 18px;
   }
 }
 .kvartira .card_dialog {
@@ -1085,19 +1104,50 @@ template {
   -ms-transform: translate(-50%, -15%);
   transform: translate(-50%, -15%);
   width: 80vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-@media (max-width: 500px) {
-  .kvartira .card_dialog {
-    max-width: calc(100vw - 50px);
+@media (max-height: 650px) and (max-width: 1440px) {
+  .kvartira .card_dialog .card_dialog-text {
+    font-size: 20px;
+    line-height: 24px;
   }
 }
-@media (max-height: 720px) {
+@media (max-height: 650px) and (max-width: 850px) {
+  .kvartira .card_dialog .card_dialog-text {
+    margin-top: 20px;
+    line-height: 24px;
+  }
+}
+@media (max-height: 720px) and (max-width: 1440px) {
+  .kvartira .card_dialog {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    width: 80vw;
+    bottom: -20%;
+    max-width: 70vw;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
   .kvartira .card_dialog {
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
     width: 80vw;
     bottom: -15%;
+  }
+}
+@media (max-height: 720px) and (max-width: 500px) {
+  .kvartira .card_dialog {
+    width: 80vw;
+  }
+}
+@media (max-height: 500px) and (max-width: 800px) {
+  .kvartira .card_dialog {
+    width: 80vw;
+    top: 40%;
   }
 }
 .kvartira .card_item {
@@ -1115,9 +1165,16 @@ template {
     left: 21%;
   }
 }
-@media (max-height: 700px) {
+@media (max-height: 720px) and (max-width: 780px) {
   .kvartira .card_mobile-img {
-    width: 30%;
+    width: 50%;
+    top: 50%;
+  }
+}
+@media (max-height: 720px) and (max-width: 500px) {
+  .kvartira .card_mobile-img {
+    width: 50%;
+    top: 55%;
   }
 }
 .kvartira .card_item-desctop {
@@ -1131,9 +1188,33 @@ template {
     display: none;
   }
 }
-@media (max-height: 700px) {
+.kvartira .card_label .age {
+  position: absolute;
+  right: 0%;
+}
+@media (max-height: 720px) and (max-width: 1440px) {
+  .kvartira .card_label .age {
+    bottom: -10%;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
+  .kvartira .card_label .age {
+    margin-top: 0px;
+  }
+}
+@media (max-height: 720px) and (max-width: 1440px) {
   .kvartira .card_label {
-    bottom: -15%;
+    bottom: 3%;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
+  .kvartira .card_label {
+    top: 110%;
+  }
+}
+@media (max-height: 500px) and (max-width: 800px) {
+  .kvartira .card_label {
+    top: 120%;
   }
 }
 
