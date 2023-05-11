@@ -593,6 +593,11 @@ template {
     max-width: 85%;
   }
 }
+@media (max-width: 550px) {
+  .main_hero-section .hero {
+    max-width: 110%;
+  }
+}
 .main_hero-section .kru {
   z-index: 30;
 }
@@ -609,6 +614,11 @@ template {
 @media (max-height: 500px) and (max-width: 1440px) {
   .main_hero-section .kru {
     margin: 0 0 10% -20px;
+  }
+}
+@media (max-width: 550px) {
+  .main_hero-section .kru {
+    z-index: 115;
   }
 }
 .main_hero-section .porech {
@@ -630,6 +640,12 @@ template {
     margin: 0 0 10% -60px;
   }
 }
+@media (max-width: 550px) {
+  .main_hero-section .porech {
+    z-index: 110;
+    margin: 0 0 20% -90px;
+  }
+}
 .main_hero-section .woman {
   margin: 200px 0 0 -200px;
 }
@@ -646,6 +662,11 @@ template {
 @media (max-height: 500px) and (max-width: 1440px) {
   .main_hero-section .woman {
     margin: 0 0 5% -80px;
+  }
+}
+@media (max-width: 550px) {
+  .main_hero-section .woman {
+    z-index: 100;
   }
 }
 .main_hero-section .hero_description {
