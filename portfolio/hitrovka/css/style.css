@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Glitch&display=swap");
-@import url("//db.onlinewebfonts.com/c/5ebc09361aef4dbfa14ad8492b8cca11?family=SangBleu+Sunrise");
 body {
   overflow-x: hidden;
   -webkit-user-select: none;
@@ -243,6 +242,13 @@ template {
     height: 22px;
   }
 }
+@font-face {
+  font-family: "SangBleuSunrise";
+  src: url("../fonts/SangBleuSunrise.eot");
+  src: url("../fonts/SangBleuSunrise.eot?#iefix") format("embedded-opentype"), url("../fonts/SangBleuSunrise.woff") format("woff"), url("../fonts/SangBleuSunrise.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 .card_block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -372,6 +378,7 @@ template {
 }
 .card_block .card_dialog .card_dialog-text .map_link {
   text-decoration: none;
+  font-family: "SangBleuSunrise";
 }
 .card_block .card_dialog .card_dialog-text .map_link .remove_map {
   color: #B58260;
@@ -638,7 +645,7 @@ template {
 }
 .main_hero-section .hero_description .hero-title {
   margin: 0;
-  font-family: "SangBleu Sunrise";
+  font-family: "SangBleuSunrise";
   font-style: normal;
   font-weight: 450;
   font-size: 42px;
@@ -870,7 +877,7 @@ template {
 .main_link .select-hero {
   margin: 0;
   bottom: 36px;
-  font-family: "SangBleu Sunrise";
+  font-family: "SangBleuSunrise";
   font-style: normal;
   font-weight: 450;
   font-size: 42px;
@@ -980,6 +987,81 @@ template {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+.kvartira .card_block .card_text {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin: 10% 5% 0 0;
+}
+.kvartira .card_block .card_item-desctop {
+  position: fixed;
+  width: 164.56px;
+  height: 164.56px;
+  left: 4%;
+  bottom: 15%;
+}
+@media (max-width: 800px) {
+  .kvartira .card_block .card_item-desctop {
+    display: none;
+  }
+}
+.kvartira .card_block .card_mobile-img {
+  position: relative;
+}
+.kvartira .card_block .card_mobile-img .card_item-mobile {
+  display: none;
+}
+@media (max-width: 800px) {
+  .kvartira .card_block .card_mobile-img .card_item-mobile {
+    display: block;
+    position: absolute;
+    max-width: 17%;
+    top: 58%;
+    left: 27%;
+  }
+}
+.kvartira .card_block .card_dialog {
+  display: none;
+  max-width: 827px;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+}
+.kvartira .card_block .card_dialog .card_dialog-text {
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+@media (max-width: 850px) {
+  .kvartira .card_block .card_dialog {
+    width: 60vw;
+  }
+}
+.kvartira .card_block .card_dialog .map_link {
+  font-family: "SangBleuSunrise";
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  margin: 0;
+}
+.kvartira .card_block .card_dialog .map_link .remove_map {
+  color: #B58260;
+  font-size: 28px;
+}
+@media (max-width: 800px) {
+  .kvartira .card_block .card_dialog .map_link .remove_map {
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+.kvartira .card_block .card_label {
+  margin: 0% auto 0% auto;
 }
 
 .traktir {
@@ -1129,7 +1211,7 @@ template {
 .map .point_block .point-item .point-text {
   width: 271px;
   height: 82px;
-  font-family: "SangBleu Sunrise";
+  font-family: "SangBleuSunrise";
   font-style: normal;
   font-weight: 700;
   font-size: 28px;

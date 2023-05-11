@@ -18,6 +18,8 @@ const tractirDialog = document.querySelector('.tractir_dialog');
 const tractirBlock = document.querySelector('.tractir_block');
 const antikvarDialog = document.querySelector('.antikvar_dialog');
 const antikvarBlock = document.querySelector('.antikvar_block');
+const radjiBlock = document.querySelector('.radji_dialog');
+const radjiItem = document.querySelectorAll('.radji-item');
 const addCardTextRadji = (nameTitle, nameSubtitle, numberArrName, numberArrDescr) => {
   if (nameTitle) {
     nameTitle.textContent = numberArrName;
@@ -58,6 +60,11 @@ const addCardTextNochlejka = (nameTitle, nameSubtitle, numberArrName, numberArrD
     null;
   }
 };
+radjiItem.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    radjiBlock.style.display = 'grid';
+  });
+});
 const changeDialogTextTractir = (nameDialog, clickBlock, nameArr) => {
   let currentIndex = 1;
   function changeTextDialog() {
@@ -77,6 +84,7 @@ const changeDialogTextTractir = (nameDialog, clickBlock, nameArr) => {
     }
   }
   clickBlock.addEventListener('click', changeTextDialog);
+  clickBlock.addEventListener('touchend', changeTextDialog);
 };
 fetch(url).then(response => response.json()).then(resp => {
   console.log(resp);
@@ -106,7 +114,7 @@ fetch(url).then(response => response.json()).then(resp => {
   addCardTextAntikvar(antikvarTitle, antikvarSubTitle, location[3].name, location[3].desc);
   addCardTextNochlejka(nochlejkaTitle, nochlejkaSubTitle, location[4].name, location[4].desc);
   changeDialogTextTractir(tractirDialog, tractirBlock, location[1].dialog);
-  changeDialogText(antikvarDialog, antikvarBlock, location[3].dialog);
+  changeDialogTextAntikvar(antikvarDialog, antikvarBlock, location[3].dialog);
   // antikvarBlock.addEventListener('click', () => {
   //     changeTextDialog(antikvarDialog, antikvarBlock, location[3].dialog)
   // });
