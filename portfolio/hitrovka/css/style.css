@@ -1150,6 +1150,12 @@ template {
     top: 40%;
   }
 }
+@media (max-height: 450px) and (max-width: 900px) {
+  .kvartira .card_dialog {
+    top: 50%;
+    width: 55vw;
+  }
+}
 .kvartira .card_item {
   z-index: 100;
   cursor: pointer;
@@ -1182,6 +1188,14 @@ template {
   height: 164.56px;
   left: 4%;
   bottom: 17%;
+}
+@media (max-height: 450px) and (max-width: 900px) {
+  .kvartira .card_item-desctop {
+    width: 10%;
+    height: auto;
+    left: 4%;
+    bottom: 10%;
+  }
 }
 @media screen and (max-width: 800px) {
   .kvartira .card_item-desctop {
@@ -1217,28 +1231,80 @@ template {
     top: 120%;
   }
 }
+@media (max-height: 450px) and (max-width: 900px) {
+  .kvartira .card_label {
+    top: 120%;
+  }
+}
 
 .traktir {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   overflow-x: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("../img/traktir/traktir.png");
+  background-image: url("../img/traktir/traktir.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
 @media screen and (max-width: 800px) {
   .traktir {
-    background-image: url("../img/traktir/traktirMobile.png");
+    background-image: url("../img/traktir/traktirMobile.webp");
     background-repeat: no-repeat;
     background-size: cover;
+    background-size: cover;
+    background-position: center;
   }
 }
 .traktir .card_text {
-  margin-top: 0%;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin: 5% 0 0 5%;
 }
-.traktir .card_text .card_subtitle {
-  text-align: center;
+@media (max-height: 800px) and (max-width: 1440px) {
+  .traktir .card_text .card_title {
+    font-size: 64px;
+    line-height: 60px;
+    margin-bottom: 0px;
+    margin-top: 0;
+  }
+}
+@media (max-height: 800px) and (max-width: 800px) {
+  .traktir .card_text .card_title {
+    font-size: 36px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-height: 900px) and (max-width: 1440px) {
+  .traktir .card_text .card_subtitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
+  .traktir .card_text .card_subtitle {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+@media (max-height: 720px) and (max-width: 500px) {
+  .traktir .card_text .card_subtitle {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+@media (max-height: 600px) and (max-width: 1440px) {
+  .traktir .card_text .card_subtitle {
+    font-size: 18px;
+    line-height: 18px;
+  }
 }
 .traktir .card_dialog {
   position: absolute;
@@ -1250,10 +1316,111 @@ template {
   width: 80vw;
   -ms-grid-columns: 2fr 1fr;
   grid-template-columns: 2fr 1fr;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-@media (max-width: 450px) {
+@media (max-height: 800px) and (max-width: 1440px) {
+  .traktir .card_dialog .card_dialog-text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+@media (max-height: 650px) and (max-width: 850px) {
+  .traktir .card_dialog .card_dialog-text {
+    margin-top: 20px;
+  }
+}
+@media (max-height: 800px) and (max-width: 1440px) {
   .traktir .card_dialog {
-    width: 95vw;
+    -ms-grid-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    bottom: 20%;
+    max-width: 70vw;
+  }
+}
+@media (max-height: 800px) and (max-width: 800px) {
+  .traktir .card_dialog {
+    width: 80vw;
+    bottom: -15%;
+  }
+}
+@media (max-height: 800px) and (max-width: 500px) {
+  .traktir .card_dialog {
+    width: 80vw;
+  }
+}
+@media (max-height: 500px) and (max-width: 800px) {
+  .traktir .card_dialog {
+    width: 80vw;
+    top: 40%;
+  }
+}
+@media (max-height: 450px) and (max-width: 900px) {
+  .traktir .card_dialog {
+    top: 50%;
+    width: 55vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .traktir .card_mobile-img {
+    position: absolute;
+  }
+  .traktir .card_mobile-img .card_item-mobile {
+    max-width: 17%;
+    top: 60%;
+    left: 21%;
+  }
+}
+@media (max-height: 720px) and (max-width: 780px) {
+  .traktir .card_mobile-img {
+    width: 50%;
+    top: 50%;
+  }
+}
+@media (max-height: 720px) and (max-width: 500px) {
+  .traktir .card_mobile-img {
+    width: 50%;
+    top: 55%;
+  }
+}
+.traktir .card_label .age {
+  position: absolute;
+  right: 0%;
+}
+@media (max-height: 720px) and (max-width: 1440px) {
+  .traktir .card_label .age {
+    bottom: -10%;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
+  .traktir .card_label .age {
+    margin-top: 0px;
+  }
+}
+@media (max-height: 720px) and (max-width: 1440px) {
+  .traktir .card_label {
+    bottom: 3%;
+  }
+}
+@media (max-height: 720px) and (max-width: 800px) {
+  .traktir .card_label {
+    top: 110%;
+  }
+}
+@media (max-height: 600px) and (max-width: 1440px) {
+  .traktir .card_label {
+    top: 110%;
+  }
+}
+@media (max-height: 600px) and (max-width: 800px) {
+  .traktir .card_label {
+    top: 120%;
+  }
+}
+@media (max-height: 450px) and (max-width: 900px) {
+  .traktir .card_label {
+    top: 160%;
   }
 }
 
