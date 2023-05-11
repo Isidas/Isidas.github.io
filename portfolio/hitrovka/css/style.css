@@ -508,7 +508,7 @@ template {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("../img/main/bgMain.png");
+  background-image: url("../img/main/bgMain.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -583,6 +583,16 @@ template {
     max-width: 60%;
   }
 }
+@media (max-height: 700px) and (max-width: 768px) {
+  .main_hero-section .hero {
+    max-width: 80%;
+  }
+}
+@media (max-height: 700px) and (max-width: 600px) {
+  .main_hero-section .hero {
+    max-width: 85%;
+  }
+}
 .main_hero-section .kru {
   z-index: 30;
 }
@@ -624,6 +634,7 @@ template {
   }
 }
 .main_hero-section .hero_description {
+  display: none;
   position: absolute;
   bottom: 15%;
   left: 50%;
@@ -759,6 +770,11 @@ template {
     right: 3%;
   }
 }
+@media (max-width: 425px) {
+  .main_womanSvg {
+    bottom: 25px;
+  }
+}
 .main_age {
   z-index: 200;
   position: absolute;
@@ -770,6 +786,11 @@ template {
     width: 47px;
     height: 30px;
     bottom: 65px;
+  }
+}
+@media (max-width: 425px) {
+  .main_age {
+    bottom: 25px;
   }
 }
 .main_blackout {
@@ -891,6 +912,12 @@ template {
 @media (max-width: 550px) {
   .main_link .select-hero {
     font-size: 20px;
+  }
+}
+@media (max-width: 550px) {
+  .main_link .select-hero {
+    font-size: 18px;
+    line-height: 18px;
   }
 }
 @media (max-width: 1024px) {
