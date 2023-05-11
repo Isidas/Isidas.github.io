@@ -585,12 +585,7 @@ template {
 }
 @media (max-height: 500px) and (max-width: 1440px) {
   .main_hero-section .hero {
-    max-width: 30%;
-  }
-}
-@media (max-height: 700px) and (max-width: 768px) {
-  .main_hero-section .hero {
-    max-width: 80%;
+    max-width: 50%;
   }
 }
 @media (max-height: 800px) and (max-width: 600px) {
@@ -609,11 +604,6 @@ template {
 @media (max-height: 700px) {
   .main_hero-section .kru {
     margin: 0 0 20% -20px;
-  }
-}
-@media (max-height: 500px) and (max-width: 1440px) {
-  .main_hero-section .kru {
-    margin: 0 0 10% -20px;
   }
 }
 @media (max-height: 500px) and (max-width: 1440px) {
@@ -655,7 +645,7 @@ template {
 }
 @media (max-height: 500px) and (max-width: 1440px) {
   .main_hero-section .woman {
-    margin: 0 0 10% -80px;
+    margin: 0 0 5% -80px;
   }
 }
 .main_hero-section .hero_description {
