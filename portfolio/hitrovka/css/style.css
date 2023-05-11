@@ -578,9 +578,14 @@ template {
   object-fit: contain;
   max-width: 100%;
 }
-@media (max-height: 700px) {
+@media (max-height: 700px) and (max-width: 1440px) {
   .main_hero-section .hero {
-    max-width: 60%;
+    max-width: 40%;
+  }
+}
+@media (max-height: 500px) and (max-width: 1440px) {
+  .main_hero-section .hero {
+    max-width: 30%;
   }
 }
 @media (max-height: 700px) and (max-width: 768px) {
@@ -588,7 +593,7 @@ template {
     max-width: 80%;
   }
 }
-@media (max-height: 700px) and (max-width: 600px) {
+@media (max-height: 800px) and (max-width: 600px) {
   .main_hero-section .hero {
     max-width: 85%;
   }
@@ -606,6 +611,16 @@ template {
     margin: 0 0 20% -20px;
   }
 }
+@media (max-height: 500px) and (max-width: 1440px) {
+  .main_hero-section .kru {
+    margin: 0 0 10% -20px;
+  }
+}
+@media (max-height: 500px) and (max-width: 1440px) {
+  .main_hero-section .kru {
+    margin: 0 0 10% -20px;
+  }
+}
 .main_hero-section .porech {
   z-index: 20;
   margin: 150px 0 0 -200px;
@@ -620,6 +635,11 @@ template {
     margin: 0 0 20% -60px;
   }
 }
+@media (max-height: 500px) and (max-width: 1440px) {
+  .main_hero-section .porech {
+    margin: 0 0 10% -60px;
+  }
+}
 .main_hero-section .woman {
   margin: 200px 0 0 -200px;
 }
@@ -629,6 +649,11 @@ template {
   }
 }
 @media (max-height: 700px) {
+  .main_hero-section .woman {
+    margin: 0 0 10% -80px;
+  }
+}
+@media (max-height: 500px) and (max-width: 1440px) {
   .main_hero-section .woman {
     margin: 0 0 10% -80px;
   }
@@ -741,7 +766,7 @@ template {
     transform: translate(-30%, -40%);
   }
 }
-@media (max-height: 700px) {
+@media (max-height: 800px) {
   .main_hero-section .hero_description {
     bottom: 65px;
     right: 3%;
