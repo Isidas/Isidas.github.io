@@ -267,6 +267,19 @@ template {
 .card_block .card_text {
   margin: 5% 0 0 5%;
   max-width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .card_block .card_text .card_title {
   margin: 0 auto;
@@ -320,6 +333,11 @@ template {
   .card_block .card_text {
     margin: 56px auto 0 auto;
     max-width: 90vw;
+  }
+}
+@media (max-height: 800px) {
+  .card_block .card_text {
+    margin: 0;
   }
 }
 .card_block .card_mobile-img {
@@ -419,9 +437,7 @@ template {
 }
 .card_block .card_dialog .card_dialog-item {
   max-width: 100%;
-}
-.card_block .card_dialog .card_dialog-item {
-  max-width: 100%;
+  z-index: 0;
 }
 .card_block .card_dialog:hover {
   -webkit-transition: 0.2s ease;
@@ -436,6 +452,8 @@ template {
   }
 }
 .card_block .card_label {
+  position: relative;
+  z-index: 20;
   margin: 0% auto 5% auto;
   padding: 25px 0 25px 0;
   width: 95vw;
@@ -468,6 +486,11 @@ template {
   .card_block .card_label .age {
     width: 47px;
     height: 30px;
+  }
+}
+@media (max-height: 800px) {
+  .card_block .card_label {
+    margin: 0% auto 0% auto;
   }
 }
 
@@ -988,6 +1011,7 @@ template {
   }
 }
 .nochlejka .card_block .card_content {
+  margin: 2% 0 0 0%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -999,13 +1023,15 @@ template {
 .nochlejka .card_block .card_content .card_text {
   -ms-flex-item-align: start;
   align-self: flex-start;
-  margin: 10% 0 0 5%;
 }
 .nochlejka .card_block .card_content .card_text .card_title {
   max-width: 733px;
 }
+.nochlejka .card_block .card_content .card_text .card_subtitle {
+  max-width: 822px;
+}
 .nochlejka .card_block .card_content .card_videoblock {
-  margin: 15% 5% 0 0;
+  margin: 8% 5% 0 0;
   max-width: 848px;
   height: 434px;
 }
@@ -1054,10 +1080,10 @@ template {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
 .nochlejka .card_block .nochlejka_kontent .card_dialog {
-  margin-top: 100px;
+  margin-top: 70px;
   -ms-grid-columns: 1fr 4fr;
   grid-template-columns: 1fr 4fr;
 }
@@ -1095,6 +1121,18 @@ template {
     justify-content: center;
   }
 }
+.nochlejka .card_block .card_label {
+  margin: -5% auto 0 auto;
+}
+@media (max-height: 800px) {
+  .nochlejka .card_block .card_label {
+    margin: 5% auto 0% auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+}
 
 .kvartira {
   overflow-x: hidden;
@@ -1115,7 +1153,15 @@ template {
 .kvartira .card_block .card_text {
   -ms-flex-item-align: end;
   align-self: flex-end;
-  margin: 10% 5% 0 0;
+  margin: 15% 5% 0 0;
+}
+.kvartira .card_block .card_text .radji_subtitle {
+  max-width: 755px;
+}
+@media (max-height: 800px) {
+  .kvartira .card_block .card_text {
+    margin: 3% 5% 0 0;
+  }
 }
 .kvartira .card_block .card_item-desctop {
   position: fixed;
@@ -1149,6 +1195,12 @@ template {
   max-width: 827px;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 34px auto 0 auto;
 }
 .kvartira .card_block .card_dialog .card_dialog-text {
   -ms-grid-column-align: center;
@@ -1226,6 +1278,51 @@ template {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+.police .card_block .card_text {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 15% 10% 0 0;
+}
+.police .card_block .card_text .card_title {
+  max-width: 864px;
+}
+.police .card_block .card_subtitle {
+  max-width: 729px;
+}
+.police .card_block .map_link {
+  font-family: "SangBleuSunrise";
+  text-transform: uppercase;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  margin: 0;
+}
+.police .card_block .map_link .remove_map {
+  color: #B58260;
+  font-size: 28px;
+}
+@media (max-width: 800px) {
+  .police .card_block .map_link .remove_map {
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+.police .card_block .card_label {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  margin: -3% auto 0 auto;
 }
 
 .map {
