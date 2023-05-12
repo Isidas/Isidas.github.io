@@ -138,7 +138,7 @@ const addCardTextNochlejka = (nameTitle, nameSubtitle, numberArrName, numberArrD
 };
 radjiItem.forEach(item => {
   item.addEventListener('mouseover', () => {
-    radjiBlock.style.display = 'block';
+    radjiBlock.style.display = 'flex';
   });
 });
 fetch(url).then(response => response.json()).then(resp => {

@@ -197,6 +197,13 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
 @media screen and (max-width: 1440px) {
@@ -507,7 +514,6 @@ template {
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
-  margin: 61px 8% 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -519,6 +525,9 @@ template {
   -ms-flex-align: center;
   align-items: center;
   z-index: 40;
+  position: absolute;
+  right: 5%;
+  top: 61px;
 }
 .main_logo-section .logo-img {
   width: 100%;
@@ -569,24 +578,9 @@ template {
   object-fit: contain;
   max-width: 100%;
 }
-@media (max-height: 700px) and (max-width: 1440px) {
+@media (max-height: 700px) {
   .main_hero-section .hero {
-    max-width: 40%;
-  }
-}
-@media (max-height: 500px) and (max-width: 1440px) {
-  .main_hero-section .hero {
-    max-width: 50%;
-  }
-}
-@media (max-height: 800px) and (max-width: 600px) {
-  .main_hero-section .hero {
-    max-width: 85%;
-  }
-}
-@media (max-width: 550px) {
-  .main_hero-section .hero {
-    max-width: 110%;
+    max-width: 60%;
   }
 }
 .main_hero-section .kru {
@@ -600,16 +594,6 @@ template {
 @media (max-height: 700px) {
   .main_hero-section .kru {
     margin: 0 0 20% -20px;
-  }
-}
-@media (max-height: 500px) and (max-width: 1440px) {
-  .main_hero-section .kru {
-    margin: 0 0 10% -20px;
-  }
-}
-@media (max-width: 550px) {
-  .main_hero-section .kru {
-    z-index: 115;
   }
 }
 .main_hero-section .porech {
@@ -626,17 +610,6 @@ template {
     margin: 0 0 20% -60px;
   }
 }
-@media (max-height: 500px) and (max-width: 1440px) {
-  .main_hero-section .porech {
-    margin: 0 0 10% -60px;
-  }
-}
-@media (max-width: 550px) {
-  .main_hero-section .porech {
-    z-index: 110;
-    margin: 0 0 20% -90px;
-  }
-}
 .main_hero-section .woman {
   margin: 200px 0 0 -200px;
 }
@@ -650,18 +623,7 @@ template {
     margin: 0 0 10% -80px;
   }
 }
-@media (max-height: 500px) and (max-width: 1440px) {
-  .main_hero-section .woman {
-    margin: 0 0 5% -80px;
-  }
-}
-@media (max-width: 550px) {
-  .main_hero-section .woman {
-    z-index: 100;
-  }
-}
 .main_hero-section .hero_description {
-  display: none;
   position: absolute;
   bottom: 15%;
   left: 50%;
@@ -768,7 +730,7 @@ template {
     transform: translate(-30%, -40%);
   }
 }
-@media (max-height: 800px) {
+@media (max-height: 700px) {
   .main_hero-section .hero_description {
     bottom: 65px;
     right: 3%;
@@ -797,11 +759,6 @@ template {
     right: 3%;
   }
 }
-@media (max-width: 425px) {
-  .main_womanSvg {
-    bottom: 25px;
-  }
-}
 .main_age {
   z-index: 200;
   position: absolute;
@@ -813,11 +770,6 @@ template {
     width: 47px;
     height: 30px;
     bottom: 65px;
-  }
-}
-@media (max-width: 425px) {
-  .main_age {
-    bottom: 25px;
   }
 }
 .main_blackout {
@@ -941,12 +893,6 @@ template {
     font-size: 20px;
   }
 }
-@media (max-width: 550px) {
-  .main_link .select-hero {
-    font-size: 18px;
-    line-height: 18px;
-  }
-}
 @media (max-width: 1024px) {
   .main_link {
     bottom: 106px;
@@ -954,12 +900,7 @@ template {
 }
 @media (max-width: 728px) {
   .main_link {
-    bottom: 90px;
-    width: 60vw;
-    left: 50%;
-    -webkit-transform: translate(-40%, -50%);
-    -ms-transform: translate(-40%, -50%);
-    transform: translate(-40%, -50%);
+    bottom: 70px;
   }
 }
 @media (max-height: 700px) {
