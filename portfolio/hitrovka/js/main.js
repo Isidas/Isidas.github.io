@@ -66,6 +66,36 @@ const changeDialogAntikvar = () => {
   }
 };
 changeDialogAntikvar();
+const changeDialogNochlejka = () => {
+  const nochlejkaDialog = document.querySelector('.nochlejka_dialog');
+  const nochlejkaBlock = document.querySelector('.nochlejka_block');
+  const nochlejkaVideoblock = document.querySelector('.card_videoblock');
+  const texts = ["Странно, это место выглядит давно заброшенным… Кажется, мы шли по ложному следу. Придется начинать расследование сначала!", "Кто же убил Раджу? Все ответы вы найдете в фильме «Хитровка. Знак четырех». В кино уже с 18 мая.\n\nСмотреть трейлер"];
+  let currentIndex = 1;
+  function changeText() {
+    nochlejkaDialog.textContent = texts[currentIndex];
+    if (currentIndex === texts.length - 1) {
+      nochlejkaDialog.removeEventListener('click', changeText);
+      nochlejkaDialog.innerHTML = `${texts[currentIndex]}`;
+      // nochlejkaVideoblock.innerHTML = `
+      // <a href="https://www.youtube.com/watch?v=Whs6bBJwBfI&ab_channel=%D0%92%D0%A0%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%B5" class="video_link" target="_blank">
+      //             <video class="video"  poster="./img/nochlejka/Rectangle8.webp">
+      //                 <source src="https://www.youtube.com/watch?v=Whs6bBJwBfI&ab_channel=%D0%92%D0%A0%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%B5">
+      //             </video>
+      //             <img class="play" src="./img/Vector.svg" alt="img">
+      //         </a>  `
+    } else {
+      currentIndex = (currentIndex + 1) % texts.length;
+    }
+  }
+  if (nochlejkaDialog) {
+    nochlejkaBlock.addEventListener('click', changeText);
+    nochlejkaBlock.addEventListener('tap', changeText);
+  } else {
+    null;
+  }
+};
+changeDialogNochlejka();
 const addCardTextRadji = (nameTitle, nameSubtitle, numberArrName, numberArrDescr) => {
   if (nameTitle) {
     nameTitle.textContent = numberArrName;
