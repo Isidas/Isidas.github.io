@@ -14,12 +14,58 @@ const policeTitle = document.querySelector('.police_title');
 const policeSubTitle = document.querySelector('.police_subtitle');
 const nochlejkaTitle = document.querySelector('.nochlejka_title');
 const nochlejkaSubTitle = document.querySelector('.nochlejka_subtitle');
-const tractirDialog = document.querySelector('.tractir_dialog');
-const tractirBlock = document.querySelector('.tractir_block');
-const antikvarDialog = document.querySelector('.antikvar_dialog');
-const antikvarBlock = document.querySelector('.antikvar_block');
 const radjiBlock = document.querySelector('.radji_dialog');
 const radjiItem = document.querySelectorAll('.radji-item');
+const changeDialogTraktir = () => {
+  const traktirDialog = document.querySelector('.tractir_dialog');
+  const traktirBlock = document.querySelector('.tractir_block');
+  const texts = ["- Что это? Портсигар? Ну дела! А ведь про него давеча спрашивал городовой! Пропади моя душа, если я вру! Накинь пару монет, расскажу, как дело было!", "- Заходит, значит, городовой… Ну, сброд, значит, с лавок шасть! А он им только: «Цыц, люд арестантский, не по вашу я душу!» А сам, значит, ко мне! И рисунок протягивает. А на нем… Ентот портсигар! Только еще какие-то буквы вот тут намалеваны… Какие? А я почем знаю? Мы университетов не кончали, звиняйте!"];
+  let currentIndex = 1;
+  function changeText() {
+    traktirDialog.textContent = texts[currentIndex];
+    if (currentIndex === texts.length - 1) {
+      traktirDialog.removeEventListener('click', changeText);
+      traktirDialog.innerHTML = `${texts[currentIndex]} 
+            <a href="./map.html" class="map_link">
+                <p class="remove_map">«Вернуться на карту»</p>
+            </a>`;
+    } else {
+      currentIndex = (currentIndex + 1) % texts.length;
+    }
+  }
+  if (traktirDialog) {
+    traktirBlock.addEventListener('click', changeText);
+    traktirBlock.addEventListener('tap', changeText);
+  } else {
+    null;
+  }
+};
+changeDialogTraktir();
+const changeDialogAntikvar = () => {
+  const antikvarDialog = document.querySelector('.antikvar_dialog');
+  const antikvarBlock = document.querySelector('.antikvar_block');
+  const texts = ["- Подскажите, любезнейший, что вы знаете про вот этот [ПРЕДМЕТ]?", "- Знать-то я знаю много, но у нас в районе действует правило, кто много говорит, долго не живет. К тому же информация стоит денег…", "- Ну хорошо. Вот вам серебряный рубль. Этого хватит?", "- Этого хватит, чтобы меня похоронить, если я назову тебе имя…", "- А если я дам золотой?", "- Давай так. Имя я не назову, но скажу, где искать. А уж пойдешь ты туда или нет, решать тебе… Но я бы не советовал туда соваться. Плохое это место!", "- Вот деньги!"];
+  let currentIndex = 1;
+  function changeText() {
+    antikvarDialog.textContent = texts[currentIndex];
+    if (currentIndex === texts.length - 1) {
+      antikvarDialog.removeEventListener('click', changeText);
+      antikvarDialog.innerHTML = `${texts[currentIndex]} 
+            <a href="./map.html" class="map_link">
+                <p class="remove_map">«Вернуться на карту»</p>
+            </a>`;
+    } else {
+      currentIndex = (currentIndex + 1) % texts.length;
+    }
+  }
+  if (antikvarDialog) {
+    antikvarBlock.addEventListener('click', changeText);
+    antikvarBlock.addEventListener('tap', changeText);
+  } else {
+    null;
+  }
+};
+changeDialogAntikvar();
 const addCardTextRadji = (nameTitle, nameSubtitle, numberArrName, numberArrDescr) => {
   if (nameTitle) {
     nameTitle.textContent = numberArrName;
@@ -62,62 +108,18 @@ const addCardTextNochlejka = (nameTitle, nameSubtitle, numberArrName, numberArrD
 };
 radjiItem.forEach(item => {
   item.addEventListener('mouseover', () => {
-    radjiBlock.style.display = 'grid';
+    radjiBlock.style.display = 'block';
   });
 });
-const changeDialogTextTractir = (nameDialog, clickBlock, nameArr) => {
-  let currentIndex = 1;
-  function changeTextDialog() {
-    if (nameDialog) {
-      nameDialog.innerHTML = nameArr[currentIndex];
-      if (currentIndex === nameArr.length - 1) {
-        nameDialog.innerHTML = `${nameArr[currentIndex]} 
-                <a href="./map.html" class="map_link">
-                        <p class="remove_map">«Вернуться на карту»</p>
-                    </a>`;
-        clickBlock.removeEventListener('click', changeText);
-      } else {
-        currentIndex = (currentIndex + 1) % nameArr.length;
-      }
-    } else {
-      null;
-    }
-  }
-  clickBlock.addEventListener('click', changeTextDialog);
-  clickBlock.addEventListener('touchend', changeTextDialog);
-};
 fetch(url).then(response => response.json()).then(resp => {
   console.log(resp);
   const location = resp.location;
   const heroes = resp.heroes;
-
-  // function changeTextAntikvar() {
-  //     if(antikvarDialog) {
-  //         antikvarDialog.innerHTML= location[3].dialog[currentIndex];
-  //         if (currentIndex === location[3].dialog.length - 1) {
-  //             antikvarDialog.innerHTML = `${location[3].dialog[currentIndex]} 
-  //             <a href="./map.html" class="map_link">
-  //                     <p class="remove_map">«Вернуться на карту»</p>
-  //                 </a>`
-  //             antikvarBlock.removeEventListener('click', changeText);
-  //         } else {
-  //             currentIndex = (currentIndex + 1) % location[3].dialog.length;
-  //         }
-  //     } else {
-  //         null
-  //     }
-  // }
-
   addCardTextRadji(radjiTitle, radjiSubTitle, location[0].name, location[0].desc);
   addCardTextTractir(tractiriTitle, tractirSubTitle, location[1].name, location[1].desc);
   addCardTextPolice(policeTitle, policeSubTitle, location[2].name, location[2].desc);
   addCardTextAntikvar(antikvarTitle, antikvarSubTitle, location[3].name, location[3].desc);
   addCardTextNochlejka(nochlejkaTitle, nochlejkaSubTitle, location[4].name, location[4].desc);
-  changeDialogTextTractir(tractirDialog, tractirBlock, location[1].dialog);
-  changeDialogTextAntikvar(antikvarDialog, antikvarBlock, location[3].dialog);
-  // antikvarBlock.addEventListener('click', () => {
-  //     changeTextDialog(antikvarDialog, antikvarBlock, location[3].dialog)
-  // });
 }).catch(error => console.log('Error', error));
 /******/ })()
 ;
