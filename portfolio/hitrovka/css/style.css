@@ -893,6 +893,12 @@ template {
     font-size: 20px;
   }
 }
+@media (max-width: 470px) {
+  .main_link .select-hero {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
 @media (max-width: 1024px) {
   .main_link {
     bottom: 106px;
@@ -906,6 +912,11 @@ template {
 @media (max-height: 700px) {
   .main_link {
     bottom: 70px;
+  }
+}
+@media (max-width: 470px) {
+  .main_link {
+    bottom: 100px;
   }
 }
 
