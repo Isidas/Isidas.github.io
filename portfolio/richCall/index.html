@@ -6,32 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      function loadWebApp() {
-        $.ajax({
-          url: "https://iqos.richcall.io/client?company-id=4db48d7f-8443-4521-8234-4354a459b57e&menu-id=bedf58f5-a231-4783-9ed6-0b47907c53d0&themeColor=ffcd00&fontColor=4a4a4a",
-          method: "GET",
-          success: function (data) {
-            $("#webAppContainer").html(data);
-          },
-          error: function () {
-            $("#webAppContainer").html("Ошибка загрузки веб-приложения.");
-          },
-        });
-      }
-    </script>
   </head>
   <body>
-    <div id="webAppContainer">
-      <!-- Содержимое будет загружено после нажатия на кнопку -->
-    </div>
-    <script src="./bot.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var button = document.getElementById("makeVideoCallButton");
-        button.addEventListener("click", loadWebApp);
-      });
-    </script>
+    <iframe
+      allow="microphone; camera; autoplay; fullscreen"
+      src="https://iqos.richcall.io/client?company-id=4db48d7f-8443-4521-8234-4354a459b57e&menu-id=bedf58f5-a231-4783-9ed6-0b47907c53d0&themeColor=ffcd00&fontColor=4a4a4a"
+      width="100%"
+      height="600"
+      frameborder="0"
+    ></iframe>
+    <script src="../bot.js"></script>
   </body>
 </html>
