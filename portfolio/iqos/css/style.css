@@ -9,6 +9,10 @@ html {
   overflow-y: hidden;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +20,9 @@ html {
 }
 
 .container {
+  background-color: antiquewhite;
   max-width: 500px;
-  height: 100vh;
+  height: 80vh;
   padding: 10px;
   margin: 0 auto;
   display: flex;
