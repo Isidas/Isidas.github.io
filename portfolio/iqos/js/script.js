@@ -21,6 +21,8 @@ const timer = document.querySelector(".timer");
 const stopBtn = document.querySelector(".btn-stop");
 const startBtn = document.querySelector(".btn-start");
 
+let interval = null;
+
 const iterateText = () => {
   let index = 0;
   let timerIndex = 10;
@@ -38,14 +40,23 @@ const iterateText = () => {
       timer.innerHTML = "";
     }
   };
-  updateTimer();
-  const interval = setInterval(updateTimer, 1000);
+
+  const startInterval = () => {
+    if (interval === null) {
+      updateTimer();
+      interval = setInterval(updateTimer, 1000);
+    }
+  };
+  startInterval();
+  startBtn.addEventListener("click", startInterval);
+
   stopBtn.addEventListener("click", () => {
     clearInterval(interval);
+    interval = null; // Сброс интервала
     timer.innerHTML = "";
     text.innerHTML =
       "Я буду здесь, если вам понадобится помощь и совет. Не забывайте делать плавные затяжки и паузы между ними – примерно 10 секунд. Так вы сможете раскрыть вкус, и образуется оптимальное количество пара.";
   });
 };
+
 iterateText();
-startBtn.addEventListener("click", iterateText);
