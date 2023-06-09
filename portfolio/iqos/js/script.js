@@ -25,43 +25,52 @@ let interval = null;
 let index = 0;
 let timerIndex = 10;
 
-const iterateText = () => {
-  const updateTimer = () => {
-    timer.innerHTML = timerIndex;
-    text.innerHTML = textArray[index];
-    if (timerIndex === 0) {
-      ++index;
-      timerIndex = index === textArray.length - 1 ? 0 : 10;
-    } else {
-      timerIndex--;
-    }
-    if (index === textArray.length) {
-      timer.innerHTML = "";
-      text.innerHTML =
-        "У вас отлично получается! Надеюсь, вы насладились сеансом. Если хотите, вы всегда можете запустить трекер заново.";
-      clearInterval(interval);
-    }
-  };
-
-  const startInterval = () => {
-    if (interval === null) {
-      updateTimer();
-      interval = setInterval(updateTimer, 1000);
-    }
-  };
-  const resetInterval = () => {
-    clearInterval(interval);
-    interval = null;
-    index = 0;
-    timerIndex = 10;
-    timer.innerHTML = "";
-    text.innerHTML =
-      "Я буду здесь, если вам понадобится помощь и совет. Не забывайте делать плавные затяжки и паузы между ними – примерно 10 секунд. Так вы сможете раскрыть вкус, и образуется оптимальное количество пара.";
-    iterateText();
-  };
-  startBtn.addEventListener("click", startInterval);
-
-  stopBtn.addEventListener("click", resetInterval);
+const resetStartBtn = () => {
+  clearInterval(interval);
+  interval = null;
+  index = 0;
+  timerIndex = 10;
+  startBtn.disabled = false;
 };
 
-iterateText();
+const updateTimer = () => {
+  timer.innerHTML = timerIndex;
+  text.innerHTML = textArray[index];
+  if (timerIndex === 0) {
+    ++index;
+    timerIndex = index === textArray.length - 1 ? 0 : 10;
+  } else {
+    timerIndex--;
+  }
+  if (index === textArray.length) {
+    timer.innerHTML = "";
+    text.innerHTML =
+      "У вас отлично получается! Надеюсь, вы насладились сеансом. Если хотите, вы всегда можете запустить трекер заново.";
+    clearInterval(interval);
+    resetStartBtn();
+  }
+};
+
+const startInterval = () => {
+  if (interval === null) {
+    startBtn.disabled = true;
+    updateTimer();
+    interval = setInterval(updateTimer, 1000);
+  }
+};
+
+const resetInterval = () => {
+  resetStartBtn();
+  timer.innerHTML = "";
+  text.innerHTML =
+    "Я буду здесь, если вам понадобится помощь и совет. Не забывайте делать плавные затяжки и паузы между ними – примерно 10 секунд. Так вы сможете раскрыть вкус, и образуется оптимальное количество пара.";
+};
+
+startBtn.addEventListener("click", () => {
+  if (interval === null) {
+    startInterval();
+  } else {
+    resetStartBtn();
+  }
+});
+stopBtn.addEventListener("click", resetInterval);
