@@ -22,22 +22,24 @@ const stopBtn = document.querySelector(".btn-stop");
 const startBtn = document.querySelector(".btn-start");
 
 let interval = null;
+let index = 0;
+let timerIndex = 10;
 
 const iterateText = () => {
-  let index = 0;
-  let timerIndex = 10;
-
   const updateTimer = () => {
     timer.innerHTML = timerIndex;
     text.innerHTML = textArray[index];
-    timerIndex--;
-    if (timerIndex < 0) {
-      index++;
-      timerIndex = 10;
+    if (timerIndex === 0) {
+      ++index;
+      timerIndex = index === textArray.length - 1 ? 0 : 10;
+    } else {
+      timerIndex--;
     }
     if (index === textArray.length) {
-      clearInterval(interval);
       timer.innerHTML = "";
+      text.innerHTML =
+        "У вас отлично получается! Надеюсь, вы насладились сеансом. Если хотите, вы всегда можете запустить трекер заново.";
+      clearInterval(interval);
     }
   };
 
@@ -47,16 +49,19 @@ const iterateText = () => {
       interval = setInterval(updateTimer, 1000);
     }
   };
-  startInterval();
-  startBtn.addEventListener("click", startInterval);
-
-  stopBtn.addEventListener("click", () => {
+  const resetInterval = () => {
     clearInterval(interval);
-    interval = null; // Сброс интервала
+    interval = null;
+    index = 0;
+    timerIndex = 10;
     timer.innerHTML = "";
     text.innerHTML =
       "Я буду здесь, если вам понадобится помощь и совет. Не забывайте делать плавные затяжки и паузы между ними – примерно 10 секунд. Так вы сможете раскрыть вкус, и образуется оптимальное количество пара.";
-  });
+    iterateText();
+  };
+  startBtn.addEventListener("click", startInterval);
+
+  stopBtn.addEventListener("click", resetInterval);
 };
 
 iterateText();

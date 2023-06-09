@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: #fff;
 }
 
 * {
@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-  background-color: antiquewhite;
+  background-color: #fff;
   max-width: 500px;
   height: 80vh;
   padding: 10px;
