@@ -31,6 +31,7 @@ const resetStartBtn = () => {
   index = 0;
   timerIndex = 10;
   startBtn.disabled = false;
+  startBtn.classList.remove("btn-hide");
 };
 
 const updateTimer = () => {
@@ -47,6 +48,7 @@ const updateTimer = () => {
     text.innerHTML =
       "У вас отлично получается! Надеюсь, вы насладились сеансом. Если хотите, вы всегда можете запустить трекер заново.";
     clearInterval(interval);
+    stopBtn.classList.add("btn-hide");
     resetStartBtn();
   }
 };
@@ -61,6 +63,7 @@ const startInterval = () => {
 
 const resetInterval = () => {
   resetStartBtn();
+  stopBtn.classList.add("btn-hide");
   timer.innerHTML = "";
   text.innerHTML =
     "Я буду здесь, если вам понадобится помощь и совет. Не забывайте делать плавные затяжки и паузы между ними – примерно 10 секунд. Так вы сможете раскрыть вкус, и образуется оптимальное количество пара.";
@@ -69,6 +72,8 @@ const resetInterval = () => {
 startBtn.addEventListener("click", () => {
   if (interval === null) {
     startInterval();
+    startBtn.classList.add("btn-hide");
+    stopBtn.classList.remove("btn-hide");
   } else {
     resetStartBtn();
   }

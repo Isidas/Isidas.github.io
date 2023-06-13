@@ -59,6 +59,11 @@ body {
   height: 46px;
   border: none;
   color: #fff;
+  transition: 0.2s ease-in-out;
+}
+.container .btn-section .btn-hide {
+  opacity: 0;
+  visibility: hidden;
 }
 .container .btn-section .btn-stop {
   background: linear-gradient(99.59deg, rgba(239, 239, 239, 0.6) -7.75%, rgba(255, 255, 255, 0.08) 92.89%), linear-gradient(180deg, #f73535 0, #c8484f 100%);
