@@ -37,7 +37,7 @@ body {
   font-family: "IQOSSans-Regular";
   font-size: 36px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: red;
 }
 .container .text-section {
@@ -55,7 +55,7 @@ body {
   font-size: 18px;
   line-height: 130%;
   border-radius: 15px;
-  margin: 7px 0;
+  margin: 0px;
   height: 46px;
   border: none;
   color: #fff;
