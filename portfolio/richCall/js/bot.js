@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let tg = window.Telegram.WebApp;
-  tg.expand();
-  const frame = document.querySelector("iframe");
-  frame.addEventListener("click", () => {
-    return frame;
-  });
+let tg = window.Telegram.WebApp;
+tg.expand();
+const frame = document.querySelector("iframe");
+
+document.addEventListener("click", () => {
+  document.activeElement.blur();
 });
