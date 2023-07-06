@@ -1,1 +1,0 @@
-export const TGtoken = '5577991971:AAGDPHJEvySwljRdAlUTPvU-RTB_vXUqCCU';
