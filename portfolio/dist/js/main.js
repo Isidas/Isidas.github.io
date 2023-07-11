@@ -525,7 +525,7 @@ $(function () {
   function createTestList() {
     let text = "";
     testList.forEach((test) => {
-      text += `<a href='${test.link}' target="_blank" class="test__choose__item">${test.title}</a>`;
+      text += `<a href='${test.link}' target="_self" class="test__choose__item">${test.title}</a>`;
     });
     return text;
   }
