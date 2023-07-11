@@ -30,7 +30,7 @@ $(function () {
             </div>
             <div class="start__screen__btns">
                 <button class='btn__default btn__blue__filled quize__x__item__variant js__counter js__start__quize--4'>Угадать</button>
-                <a href='index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='./index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
@@ -159,7 +159,7 @@ $(function () {
                     <div class='btn__recomendate__inner'>Рекомендуем сделать скриншот экрана, чтобы запомнить Ваш выбор!</div>
                 </div>
                 <a href='4.html'  class='btn__default btn__black quize__x__item__variant'>Пройти еще раз</a>
-                <a href='index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='./index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
