@@ -24,7 +24,7 @@ $(function () {
                 </div>
             </div>
             <div class="start__screen__btns">
-                <a href='index.html' target="main_frame" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
@@ -189,7 +189,7 @@ $(function () {
              </div>
          </div>
          <div class="quize__x__item__answers">
-             <a href='index.html' target="main_frame" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+             <a href='index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
          </div>
      </div>`;
     $(".js__quize").html(text);
