@@ -15,16 +15,16 @@ $(function () {
                     </div>
                 </div>
                 <div class="quize__x__screen__path">
-                    <a href="javascript:void(0)" class="js__start__quize__mood quize__x__screen__path__link quize__x__screen__path__link--1">
+                    <a href="javascript:void(0)" target="_self" class="js__start__quize__mood quize__x__screen__path__link quize__x__screen__path__link--1">
                         <span class="quize__x__screen__path__link__inner">Выбрать по настроению</span>
                     </a>
-                    <a href="javascript:void(0)" class="js__start__quize__color quize__x__screen__path__link quize__x__screen__path__link--2">
+                    <a href="javascript:void(0)" target="_self" class="js__start__quize__color quize__x__screen__path__link quize__x__screen__path__link--2">
                         <span class="quize__x__screen__path__link__inner">Выбрать по любимому цвету</span>
                     </a>
                 </div>
             </div>
             <div class="start__screen__btns">
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
@@ -48,7 +48,7 @@ $(function () {
             </div>
 
             <div class="start__screen__btns">
-                <a href='javascript:void(0)' class='btn__default btn__black js__generate__startScreen'>Назад</a>
+                <a href='javascript:void(0)' target="_self" class='btn__default btn__black js__generate__startScreen'>Назад</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
@@ -78,7 +78,7 @@ $(function () {
             </div>
 
             <div class="start__screen__btns">
-                <a href='javascript:void(0)' class='btn__default btn__black js__generate__startScreen'>Назад</a>
+                <a href='javascript:void(0)' target="_self" class='btn__default btn__black js__generate__startScreen'>Назад</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
@@ -122,7 +122,7 @@ $(function () {
 
             <div class="start__screen__btns">
                 <div class='start__screen__btns__row'>
-                    <a href='javascript:void(0)' class='btn__default btn__black js__total__screen'>Назад</a>
+                    <a href='javascript:void(0)' target="_self" class='btn__default btn__black js__total__screen'>Назад</a>
                     <a target='_blank' href='https://cloud.mc.iqos.ru/taste-advisor?qs=2495f8ad5a6e2c527997f08f9b0a3670f77cf95a11cfe04d' class='btn__default btn__blue__filled js__total__screen'>Подробнее</a>
                 </div>
             </div>
@@ -161,7 +161,7 @@ $(function () {
 
             <div class="start__screen__btns">
                 <div class='start__screen__btns__row'>
-                    <a href='javascript:void(0)' class='btn__default btn__black js__total__screen'>Назад</a>
+                    <a href='javascript:void(0)' target="_self" class='btn__default btn__black js__total__screen'>Назад</a>
                     <a target='_blank' href='https://cloud.mc.iqos.ru/taste-advisor?qs=2495f8ad5a6e2c527997f08f9b0a3670f77cf95a11cfe04d' class='btn__default btn__blue__filled js__total__screen'>Подробнее</a>
                 </div>
             </div>
@@ -189,7 +189,7 @@ $(function () {
              </div>
          </div>
          <div class="quize__x__item__answers">
-             <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+             <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
          </div>
      </div>`;
     $(".js__quize").html(text);

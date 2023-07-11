@@ -51,7 +51,7 @@ $(function () {
             </div>
             <div class="start__screen__btns">
                 <button class='btn__default btn__blue__filled quize__x__item__variant js__counter js__start__quize--1'>Начать</button>
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize__2").html(text);
@@ -83,7 +83,7 @@ $(function () {
            </div>
             <div class="quize__x__item__answers">
                 <button class='btn__default btn__blue__filled js___quize--1__next js__counter quize__x__item__variant'>${titleLink}</button>
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize__2").html(text);
@@ -106,7 +106,7 @@ $(function () {
            </div>
             <div class="quize__x__item__answers">
                 <button class='btn__default btn__blue__filled js___quize--1__next js__counter quize__x__item__variant'>${titleLink}</button>
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize__2").html(text);
@@ -118,7 +118,7 @@ $(function () {
     sendEventAnalitic("passed_2nd_scenario");
 
     if (countCorrectAnswer <= 5) {
-      yetBtn = `<a href='2.html' class='btn__default btn__blue__filled quize__x__item__variant'>Пройти ещё раз</a>`;
+      yetBtn = `<a href='2.html' target="_self" class='btn__default btn__blue__filled quize__x__item__variant'>Пройти ещё раз</a>`;
     }
 
     if (countCorrectAnswer > 5) {
@@ -147,7 +147,7 @@ $(function () {
             </div>
             <div class="quize__x__item__answers">
                 ${yetBtn}
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize__2").html(text);

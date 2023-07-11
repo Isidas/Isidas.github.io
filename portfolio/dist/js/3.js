@@ -32,7 +32,7 @@ $(function () {
             </div>
             <div class="start__screen__btns">
                 <button class='btn__default btn__blue__filled quize__x__item__variant js__counter js__start__quize--3'>Узнать</button>
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize").html(text);
@@ -66,8 +66,8 @@ $(function () {
                 </div>
 
                 <div class='start__screen__btns__row'>
-                    <a href='javascript:void(0)' class='btn__default js__counter_back btn__black js__prev__step'>Назад</a>
-                    <a href='javascript:void(0)' class='btn__default btn__blue__filled js__counter js__next__step'>Следующий вкус</a>
+                    <a href='javascript:void(0)' target="_self" class='btn__default js__counter_back btn__black js__prev__step'>Назад</a>
+                    <a href='javascript:void(0)' target="_self" class='btn__default btn__blue__filled js__counter js__next__step'>Следующий вкус</a>
                 </div>
             </div>
         </div>`;
@@ -102,7 +102,7 @@ $(function () {
                 </div>
             </div>
             <div class="quize__x__item__answers">
-                <a href='index.html' class='btn__default btn__black quize__x__item__variant'>На главную</a>
+                <a href='index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>На главную</a>
                 <a href='https://cloud.mc.iqos.ru/taste-advisor?qs=2495f8ad5a6e2c527997f08f9b0a3670f77cf95a11cfe04d' target='_blank' class='btn__default btn__blue__filled quize__x__item__variant js__close_bot'>Подробнее</a>
             </div>
         </div>`;
