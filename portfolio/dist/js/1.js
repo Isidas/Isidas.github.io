@@ -150,7 +150,7 @@ $(function () {
             </div>
             <div class="quize__x__item__answers">
                 ${yetBtn}
-                <a href='./index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='./index.html' target="_self" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
     $(".js__quize__1").html(text);
