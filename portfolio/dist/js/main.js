@@ -527,7 +527,7 @@ $(function () {
   function createTestList() {
     let text = "";
     testList.forEach((test) => {
-      text += `<a href='${tg.openTelegramLink(
+      text += `<a href='${tg.openLink(
         test.link
       )}' onclick="event.preventDefault() target="_self" class="test__choose__item">${
         test.title
