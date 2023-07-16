@@ -1,4 +1,5 @@
 let tg = window.Telegram.WebApp;
+tg.expand();
 // set api url test or prod
 let URL_API =
   window.location.host == "iqos-nlu-test.cleverbots.ru"
@@ -526,7 +527,7 @@ $(function () {
   function createTestList() {
     let text = "";
     testList.forEach((test) => {
-      text += `<a href='./${tg.openTelegramLink(
+      text += `<a href='${tg.openTelegramLink(
         test.link
       )}' onclick="event.preventDefault() target="_self" class="test__choose__item">${
         test.title
