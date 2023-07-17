@@ -1,11 +1,16 @@
-import { setAchivmentToLocalStorage, sendEventAnalitic } from "./main.js";
-import { QUESTIONS_COLOR, QUESTIONS_MOOD } from "./data/5.js";
+import { setAchivmentToLocalStorage,sendEventAnalitic } from './main.js';
+import {
+    QUESTIONS_COLOR,
+    QUESTIONS_MOOD
+} from './data/5.js';
 
-let imageFolder = "images/branch/5/";
+let imageFolder = 'images/branch/5/';
 
 $(function () {
-  function generateStartScreen() {
-    let text = `
+
+
+    function generateStartScreen() {
+        let text = `
         <div class="quize__x__screen__first">
             <div class="quize__x__screen__wrap">
                 <div class="quize__x__screen__content quize__x__screen__content--small">
@@ -24,20 +29,24 @@ $(function () {
                 </div>
             </div>
             <div class="start__screen__btns">
-                <a href='./index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+                <a href='main.html' target="main_frame" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
             </div>
         </div>`;
-    $(".js__quize").html(text);
-  }
+        $('.js__quize').html(text);
+    }
 
-  function generateScreenMood() {
-    let moodListText = "";
 
-    QUESTIONS_MOOD.forEach((item, index) => {
-      moodListText += `<div class='quize__5__mood__choose'><button data-title="${item.moodText}" data-id="${index}" class="js__start__mood__test">${item.smile}</button></div>`;
-    });
+    function generateScreenMood() {
 
-    let text = `
+
+        let moodListText = '';
+
+
+        QUESTIONS_MOOD.forEach((item, index) => {
+            moodListText += `<div class='quize__5__mood__choose'><button data-title="${item.moodText}" data-id="${index}" class="js__start__mood__test">${item.smile}</button></div>`
+        });
+
+        let text = `
         <div class="quize__x__item quize__x__item--5">
             <div class="quize__x__item--5__wrap">
                 <div class="quize__x__item__title quize__x__item__title--small">Выберите несколько эмодзи,которые соответствуют
@@ -51,20 +60,22 @@ $(function () {
                 <a href='javascript:void(0)' class='btn__default btn__black js__generate__startScreen'>Назад</a>
             </div>
         </div>`;
-    $(".js__quize").html(text);
-  }
+        $('.js__quize').html(text);
+    }
 
-  function generateScreenColor() {
-    let colorList = ["#ED722D", "#B25442", "#B4A1CF", "#CAD74D", "#F49F7E"];
-    let colorListText = "";
 
-    colorList.forEach((color, index) => {
-      colorListText += `<div class='quize__5__color__choose js__start__color__test' data-id=${index} style="background:${color}">
+    function generateScreenColor() {
+        let colorList = ["#ED722D", "#B25442", '#B4A1CF', '#CAD74D', '#F49F7E'];
+        let colorListText = '';
+
+        colorList.forEach((color, index) => {
+            colorListText +=
+            `<div class='quize__5__color__choose js__start__color__test' data-id=${index} style="background:${color}">
                 <div class='quize__5__color__choose__name'>${color}</div>
-            </div>`;
-    });
+            </div>`
+        });
 
-    let text = `
+        let text = `
         <div class="quize__x__item quize__x__item--5">
             <div class="quize__x__item--5__wrap">
                 <div class="quize__x__item__title quize__x__item__title--small">Какой цвет нравится <br>Вам больше всего?</div>
@@ -81,13 +92,13 @@ $(function () {
                 <a href='javascript:void(0)' class='btn__default btn__black js__generate__startScreen'>Назад</a>
             </div>
         </div>`;
-    $(".js__quize").html(text);
-  }
+        $('.js__quize').html(text);
+    }
 
-  function generateScreenMoodQuestion(id) {
-    let question = QUESTIONS_MOOD[id];
+    function generateScreenMoodQuestion(id){
+        let question = QUESTIONS_MOOD[id];
 
-    let text = `
+        let text = `
         <div class="quize__x__item quize__x__item--5">
             <div class="quize__x__item--5__wrap">
 
@@ -127,13 +138,13 @@ $(function () {
                 </div>
             </div>
         </div>`;
-    $(".js__quize").html(text);
-  }
+        $('.js__quize').html(text);
+    }
 
-  function generateScreenColorQuestion(id) {
-    let question = QUESTIONS_COLOR[id];
+    function generateScreenColorQuestion(id){
+        let question = QUESTIONS_COLOR[id];
 
-    let text = `
+        let text = `
         <div class="quize__x__item quize__x__item--5">
             <div class="quize__x__item--5__wrap">
                 <div class="quize__x__item__title quize__x__item__title--small">Цвет настроения <br> и вкуса:</div>
@@ -166,13 +177,16 @@ $(function () {
                 </div>
             </div>
         </div>`;
-    $(".js__quize").html(text);
-  }
+        $('.js__quize').html(text);
 
-  function showTotalScreen() {
-    sendEventAnalitic("passed_5th_scenario");
-    setAchivmentToLocalStorage(5);
-    let text = `
+    }
+
+
+
+    function showTotalScreen(){
+        sendEventAnalitic('passed_5th_scenario')
+        setAchivmentToLocalStorage(5)
+        let text =`
         <div class="quize__x__item quize__x__item--status">
         <div class='quize__x__item--status__info quize__x__item--status__info--3'>
              <div class='quize__x__item--status__info__inner-total'>
@@ -189,40 +203,51 @@ $(function () {
              </div>
          </div>
          <div class="quize__x__item__answers">
-             <a href='./index.html'  class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
+             <a href='main.html' target="main_frame" class='btn__default btn__black quize__x__item__variant'>Назад на главную</a>
          </div>
      </div>`;
-    $(".js__quize").html(text);
-  }
+        $('.js__quize').html(text);
+    }
 
-  $(document).on("click", ".js__total__screen", function (e) {
-    showTotalScreen();
-  });
 
-  $(document).on("click", ".js__start__mood__test", function (e) {
-    e.preventDefault();
-    generateScreenMoodQuestion($(this).data("id"));
-  });
 
-  $(document).on("click", ".js__start__color__test", function (e) {
-    e.preventDefault();
-    generateScreenColorQuestion($(this).data("id"));
-  });
 
-  $(document).on("click", ".js__generate__startScreen", function (e) {
-    e.preventDefault();
-    generateStartScreen();
-  });
+    $(document).on('click', '.js__total__screen', function (e) {
+        showTotalScreen()
+    });
 
-  $(document).on("click", ".js__start__quize__mood", function (e) {
-    e.preventDefault();
-    generateScreenMood();
-  });
+    $(document).on('click', '.js__start__mood__test', function (e) {
+        e.preventDefault();
+        generateScreenMoodQuestion($(this).data('id'))
+    });
 
-  $(document).on("click", ".js__start__quize__color", function (e) {
-    e.preventDefault();
-    generateScreenColor();
-  });
+    $(document).on('click', '.js__start__color__test', function (e) {
+        e.preventDefault();
+        generateScreenColorQuestion($(this).data('id'));
+    });
 
-  generateStartScreen();
-});
+
+
+
+    $(document).on('click', '.js__generate__startScreen', function (e) {
+        e.preventDefault();
+        generateStartScreen()
+    });
+
+
+    $(document).on('click', '.js__start__quize__mood', function (e) {
+        e.preventDefault();
+        generateScreenMood()
+    });
+
+    $(document).on('click', '.js__start__quize__color', function (e) {
+        e.preventDefault();
+        generateScreenColor()
+    });
+
+
+
+
+
+    generateStartScreen()
+})
