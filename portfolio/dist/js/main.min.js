@@ -55,7 +55,7 @@ function addPuzzleField() {
   for (let i = 1; i <= 4; i++) {
     const puzzleField = document.createElement("img");
     puzzleField.classList.add("puzzle_field", `puzzle_field_${i}`);
-    puzzleField.src = "./images/7.svg";
+    puzzleField.src = "./images/7.png";
     puzzleField.alt = "puzzle_wrapper";
     puzzleContainer.appendChild(puzzleField);
   }
