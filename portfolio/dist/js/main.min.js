@@ -118,6 +118,7 @@ window.onload = () => {
       checkButton.classList.add('btn_hide');
       btnAgain.classList.remove('btn_hide');
       itemWrapper.style.display = 'none';
+      container.style.display = 'flex';
       botTitle.innerHTML =
         '<b>Прекрасно! Вы отлично справились!</b>Главное преимущество — отсутствие горения.А значит';
     } else {
@@ -150,7 +151,7 @@ window.onload = () => {
     itemWrapper.classList.remove('hide');
     gameValidateDiv.classList.remove('hide');
     btnStart.classList.add('hide');
-    container.style.display = 'block'
+    container.style.display = 'block';
   });
 
   gameValidateDiv.appendChild(checkButton);
