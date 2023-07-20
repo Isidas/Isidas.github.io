@@ -1,5 +1,9 @@
 const tg = window.Telegram.WebApp;
 tg.expand();
+const botTitle = document.querySelector('.game_title');
+const itemWrapper = document.querySelector(".game_wrapper");
+const container = document.querySelector('.container');
+const btnAgain = document.querySelector('.btn_again');
 const pazzl = [
   { id: 1, title: "Нет пепла", img: "1.png", right: true },
   { id: 2, title: "Есть дым и пепел", img: "2.png", right: false },
@@ -14,8 +18,15 @@ const pazzl = [
   { id: 6, title: "Нет сигаретного дыма", img: "6.png", right: true },
 ];
 
+const wrongAnswer = [
+  'Не совсем так',
+  'Кажется, где-то ошибка',
+  'Чего-то не хватает'
+]
+
+let gameValidateDiv;
+
 const createGameItem = () => {
-  const itemWrapper = document.querySelector(".game_wrapper");
   pazzl.forEach((item, index) => {
     const gameItem = document.createElement("div");
     gameItem.classList.add("game_item");
@@ -34,8 +45,6 @@ const createGameItem = () => {
 };
 
 function addPuzzleField() {
-  const gameValidateDiv = document.querySelector(".game_validate");
-
   const puzzleContainer = document.createElement("div");
   puzzleContainer.classList.add("puzzle_container");
 
@@ -62,13 +71,20 @@ function onGameItemClick(gameItem) {
     gameItem.classList.add("disabled");
   }
 }
-
+function getRandomWrongAnswer() {
+  const randomIndex = Math.floor(Math.random() * wrongAnswer.length);
+  return wrongAnswer[randomIndex];
+}
 window.onload = () => {
-  addPuzzleField();
-  createGameItem();
+  gameValidateDiv = document.querySelector(".game_validate");
+  if (!gameValidateDiv) {
+    console.error("Элемент с классом 'game_validate' не найден на странице.");
+    return;
+  }
 
   const checkButton = document.createElement("button");
-  checkButton.textContent = "Проверить";
+  checkButton.classList.add('btn_validate')
+  checkButton.textContent = "Готово";
   checkButton.addEventListener("click", () => {
     const puzzleFields = document.querySelectorAll(".puzzle_field");
     const isPuzzleCorrect = Array.from(puzzleFields).every((field) => {
@@ -76,14 +92,39 @@ window.onload = () => {
       const puzzle = pazzl.find((item) => item.id === Number(fieldId));
       return field.src.includes(puzzle.img) === puzzle.right;
     });
-
+    const randomAnswer = getRandomWrongAnswer();
     if (isPuzzleCorrect) {
-      alert("Пазлы собраны верно!");
+      checkButton.classList.add('btn_hide')
+      btnAgain.classList.remove('btn_hide')
+      itemWrapper.style.display = "none";
+      botTitle.innerHTML = '<b>Прекрасно! Вы отлично справились!</b>Главное преимущество — отсутствие горения.А значит';
     } else {
-      alert("Пазлы собраны неверно!");
+      checkButton.classList.add('btn_hide')
+      btnAgain.classList.remove('btn_hide')
+      gameValidateDiv.style.display = "none";
+      itemWrapper.style.display = "none";
+      botTitle.style.display = "none";
+      const wrongFrame = document.createElement("div");
+      wrongFrame.classList.add("quize__x__item", "quize__x__item--status");
+      wrongFrame.innerHTML = `
+        <div class='quize__x__item--status__info'>
+          <div class='quize__x__item--status__info__inner'>
+            <div class='quize__x__item--status__icon'>
+              <img src='images/wrong.svg'>
+            </div>
+            <div class='quize__x__item--status__title'>${randomAnswer}</div>
+          </div>
+        </div>
+      `;
+      container.prepend(wrongFrame);
     }
   });
+  btnAgain.addEventListener('click', () => {
+    location.reload();
+  })
 
-  const gameValidateDiv = document.querySelector(".game_validate");
   gameValidateDiv.appendChild(checkButton);
+
+  addPuzzleField();
+  createGameItem();
 };
