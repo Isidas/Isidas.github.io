@@ -22,7 +22,7 @@ const wrongAnswer = [
   'Не совсем так',
   'Кажется, где-то ошибка',
   'Чего-то не хватает'
-]
+];
 
 let gameValidateDiv;
 
@@ -54,13 +54,28 @@ function addPuzzleField() {
     puzzleField.src = "./images/7.png";
     puzzleField.alt = "puzzle_wrapper";
     puzzleContainer.appendChild(puzzleField);
+
+    puzzleField.addEventListener("click", () => {
+      clearPuzzleField(puzzleField);
+    });
   }
 
   gameValidateDiv.appendChild(puzzleContainer);
 }
 
+function clearPuzzleField(puzzleField) {
+  if (puzzleField.classList.contains("filled")) {
+    const gameId = puzzleField.dataset.id;
+    const gameItem = document.querySelector(`.game_item[data-id="${gameId}"]`);
+    puzzleField.src = "./images/7.png";
+    puzzleField.classList.remove("filled");
+    puzzleField.dataset.id = "";
+    gameItem.classList.remove("disabled");
+  }
+}
+
 function onGameItemClick(gameItem) {
-  if (gameItem.classList.contains("disabled")) return; // Если элемент уже использован, ничего не делаем
+  if (gameItem.classList.contains("disabled")) return;
 
   const puzzleField = document.querySelector(".puzzle_container img:not(.filled)");
   if (puzzleField) {
@@ -71,10 +86,12 @@ function onGameItemClick(gameItem) {
     gameItem.classList.add("disabled");
   }
 }
+
 function getRandomWrongAnswer() {
   const randomIndex = Math.floor(Math.random() * wrongAnswer.length);
   return wrongAnswer[randomIndex];
 }
+
 window.onload = () => {
   gameValidateDiv = document.querySelector(".game_validate");
   if (!gameValidateDiv) {
@@ -83,7 +100,7 @@ window.onload = () => {
   }
 
   const checkButton = document.createElement("button");
-  checkButton.classList.add('btn_validate', 'btn_game')
+  checkButton.classList.add('btn_validate', 'btn_game');
   checkButton.textContent = "Готово";
   checkButton.addEventListener("click", () => {
     const puzzleFields = document.querySelectorAll(".puzzle_field");
@@ -92,15 +109,16 @@ window.onload = () => {
       const puzzle = pazzl.find((item) => item.id === Number(fieldId));
       return field.src.includes(puzzle.img) === puzzle.right;
     });
+
     const randomAnswer = getRandomWrongAnswer();
     if (isPuzzleCorrect) {
-      checkButton.classList.add('btn_hide')
-      btnAgain.classList.remove('btn_hide')
+      checkButton.classList.add('btn_hide');
+      btnAgain.classList.remove('btn_hide');
       itemWrapper.style.display = "none";
       botTitle.innerHTML = '<b>Прекрасно! Вы отлично справились!</b>Главное преимущество — отсутствие горения.А значит';
     } else {
-      checkButton.classList.add('btn_hide')
-      btnAgain.classList.remove('btn_hide')
+      checkButton.classList.add('btn_hide');
+      btnAgain.classList.remove('btn_hide');
       gameValidateDiv.style.display = "none";
       itemWrapper.style.display = "none";
       botTitle.style.display = "none";
@@ -116,12 +134,13 @@ window.onload = () => {
           </div>
         </div>
       `;
-      container.prepend(wrongFrame);
+      container.insertBefore(wrongFrame, botTitle.nextSibling);
     }
   });
+
   btnAgain.addEventListener('click', () => {
     location.reload();
-  })
+  });
 
   gameValidateDiv.appendChild(checkButton);
 
