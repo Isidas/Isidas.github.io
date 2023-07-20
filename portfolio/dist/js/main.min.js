@@ -150,6 +150,7 @@ window.onload = () => {
     itemWrapper.classList.remove('hide');
     gameValidateDiv.classList.remove('hide');
     btnStart.classList.add('hide');
+    container.style.display = 'block'
   });
 
   gameValidateDiv.appendChild(checkButton);
