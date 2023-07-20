@@ -83,7 +83,7 @@ window.onload = () => {
   }
 
   const checkButton = document.createElement("button");
-  checkButton.classList.add('btn_validate')
+  checkButton.classList.add('btn_validate', 'btn_game')
   checkButton.textContent = "Готово";
   checkButton.addEventListener("click", () => {
     const puzzleFields = document.querySelectorAll(".puzzle_field");
