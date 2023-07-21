@@ -29,6 +29,34 @@ const wrongAnswer = [
 
 let gameValidateDiv;
 
+// Функция для отправки данных о событии на сервер
+function sendEventToServer(user_id, event) {
+  const host = 'https://iqosmeetingbot-test.cleverbots.ru/';
+  const endpoint = `${host}api/actions/q_club/webbot`;
+  const data = {
+    user_id: user_id,
+    event: event,
+  };
+
+  // Используем fetch для отправки POST запроса на указанный endpoint
+  fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Обработка ответа от сервера, если это необходимо
+      console.log('Событие успешно отправлено:', data);
+    })
+    .catch((error) => {
+      // Обработка ошибок, если они возникнут
+      console.error('Ошибка при отправке события:', error);
+    });
+}
+
 function createGameItem() {
   pazzl.forEach((item, index) => {
     const gameItem = document.createElement('div');
@@ -115,15 +143,15 @@ window.onload = () => {
 
     const randomAnswer = getRandomWrongAnswer();
     if (isPuzzleCorrect) {
-      checkButton.classList.add('btn_hide');
-      btnAgain.classList.remove('btn_hide');
+      checkButton.classList.add('hide');
+      btnAgain.classList.remove('hide');
       itemWrapper.style.display = 'none';
       container.style.display = 'flex';
       botTitle.innerHTML =
         '<b>Прекрасно! Вы отлично справились!</b>Главное преимущество — отсутствие горения.А значит';
     } else {
-      checkButton.classList.add('btn_hide');
-      btnAgain.classList.remove('btn_hide');
+      checkButton.classList.add('hide');
+      btnAgain.classList.remove('hide');
       gameValidateDiv.style.display = 'none';
       itemWrapper.style.display = 'none';
       botTitle.style.display = 'none';
@@ -141,6 +169,11 @@ window.onload = () => {
       `;
       container.insertBefore(wrongFrame, botTitle.nextSibling);
     }
+
+    // Получение данных о пользователе для отправки на сервер
+    const user_id = 'telegram-248993654-_dev_iqos_cc_1_3-248993654-dhM-13700824152-462890562'; // Замените на реальный ID пользователя
+    const event = 'passed_all_scenario'; // Событие, которое нужно отправить
+    sendEventToServer(user_id, event);
   });
 
   btnAgain.addEventListener('click', () => {
@@ -148,6 +181,7 @@ window.onload = () => {
   });
 
   btnStart.addEventListener('click', () => {
+    botTitle.textContent = null
     itemWrapper.classList.remove('hide');
     gameValidateDiv.classList.remove('hide');
     btnStart.classList.add('hide');
