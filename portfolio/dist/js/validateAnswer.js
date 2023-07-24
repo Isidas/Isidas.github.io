@@ -5,17 +5,19 @@ export function trueAns(
   container,
   botTitle,
   finalFrame,
-  gameValidateDiv
+  gameValidateDiv,
+  btnClose
 ) {
   checkButton.classList.add("hide");
   checkButton.classList.add("hide");
   btnAgain.classList.remove("hide");
+  btnClose.classList.remove("hide");
   itemWrapper.style.display = "none";
   container.style.display = "flex";
   finalFrame.classList.remove("hide");
   gameValidateDiv.style.display = "none";
   botTitle.innerHTML =
-    "<b>Прекрасно! Вы отлично справились!</b>Главное преимущество — отсутствие горения.А значит";
+    "<b>Прекрасно! Вы отлично справились!</b><br/>Главное преимущество — отсутствие горения. <br/>А значит";
   botTitle.append();
 }
 export function falseAns(
