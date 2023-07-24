@@ -6,16 +6,18 @@ export function trueAns(
   botTitle,
   finalFrame,
   gameValidateDiv,
-  btnClose
+  btnClose,
+  footer
 ) {
   checkButton.classList.add("hide");
   checkButton.classList.add("hide");
   btnAgain.classList.remove("hide");
   btnClose.classList.remove("hide");
   itemWrapper.style.display = "none";
-  container.style.display = "flex";
+  container.style.display = "block";
   finalFrame.classList.remove("hide");
   gameValidateDiv.style.display = "none";
+  footer.style.position = "absolute";
   botTitle.innerHTML =
     "<b>Прекрасно! Вы отлично справились!</b><br/>Главное преимущество — отсутствие горения. <br/>А значит";
   botTitle.append();
