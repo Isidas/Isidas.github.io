@@ -16,9 +16,8 @@ export function trueAns(
   container.style.display = "block";
   finalFrame.classList.remove("hide");
   gameValidateDiv.style.display = "none";
-  footer.style.position = "absolute";
-  botTitle.innerHTML =
-    "<b>Прекрасно! Вы отлично справились!</b><br/>Главное преимущество — отсутствие горения. <br/>А значит";
+  // footer.style.position = "absolute";
+  botTitle.innerHTML = `<b>Прекрасно! Вы отлично справились!</b><br/>Главное преимущество — отсутствие горения. <br/>А значит`;
   botTitle.append();
 }
 export function falseAns(
