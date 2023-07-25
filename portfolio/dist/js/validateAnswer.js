@@ -10,8 +10,7 @@ export function trueAns(
   footer
 ) {
   checkButton.classList.add("hide");
-  checkButton.classList.add("hide");
-  btnAgain.classList.remove("hide");
+  btnAgain.classList.add("hide");
   btnClose.classList.remove("hide");
   itemWrapper.style.display = "none";
   container.style.display = "block";
