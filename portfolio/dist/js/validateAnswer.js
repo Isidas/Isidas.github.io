@@ -1,5 +1,4 @@
 export function trueAns(
-  checkButton,
   btnAgain,
   itemWrapper,
   container,
@@ -9,32 +8,33 @@ export function trueAns(
   btnClose,
   footer
 ) {
-  checkButton.classList.add("hide");
   btnAgain.classList.add("hide");
   btnClose.classList.remove("hide");
   itemWrapper.style.display = "none";
   container.style.display = "block";
   finalFrame.classList.remove("hide");
   gameValidateDiv.style.display = "none";
-  // footer.style.position = "absolute";
-  botTitle.innerHTML = `<b>Прекрасно! Вы отлично справились!</b><br/>Главное преимущество — отсутствие горения. <br/>А значит`;
+  footer.style.position = "absolute";
+  botTitle.innerHTML = `<b>Прекрасно! Вы отлично справились!</b><br>
+  Главное преимущество:
+  отсутствие горения, а значит..`;
   botTitle.append();
 }
 export function falseAns(
-  checkButton,
   btnAgain,
   gameValidateDiv,
   itemWrapper,
   botTitle,
   container,
-  randomAnswer
+  randomAnswer,
+  footer
 ) {
   container.style.display = "block";
-  checkButton.classList.add("hide");
   btnAgain.classList.remove("hide");
   gameValidateDiv.style.display = "none";
   itemWrapper.style.display = "none";
   botTitle.style.display = "none";
+  footer.style.position = "absolute";
   const wrongFrame = document.createElement("div");
   wrongFrame.classList.add("quize__x__item", "quize__x__item--status");
   wrongFrame.innerHTML = `
