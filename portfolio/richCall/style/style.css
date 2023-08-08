@@ -11,3 +11,6 @@ iframe {
   height: 100vh;
   cursor: pointer;
 }
+.rc-application {
+  height: 100vh;
+}
