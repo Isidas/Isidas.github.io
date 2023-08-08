@@ -14,3 +14,6 @@ iframe {
 .rc-application {
   height: 100vh;
 }
+.rc-application .start .fields.block .field {
+  margin: 0;
+}
